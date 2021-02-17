@@ -1,0 +1,86 @@
+/*@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+
+  background: #f3f0f1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input_field{
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  display: block;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px #cccccc;
+  line-height: 1.8em;
+  outline: none;
+  padding: 0.2em 1em;
+  font-size: 1rem;
+  font-weight: 400;
+}
+form label{
+  font-family: 'Montserrat', sans-serif;
+  color: #5d5d5d;
+}
+form input{
+  margin-top: 0.3rem;
+  margin-bottom: 1.3rem;
+  box-shadow: 2px 2px 2px #cccccc8e;
+}
+form{
+  border: 1px solid #ababab;
+  border-radius: 7px;
+  padding: 1.4rem;
+  display: table;
+  background: #f3f0f1;
+}
+form .button {
+  padding: 0px 1em;
+  margin: 0;
+  border: none;
+  outline: none;
+  /* width: 400px; */
+  /* height: 100px; */
+  position: relative;
+  background: #f3f0f1;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  display: block;
+  margin: 0 auto;
+}
+form .button span {
+  line-height: 1.7em;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+form .button1{
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+  color: #6f6cde;
+}
+form .button1:hover {
+  color: #8f8cfe;
+  /*opacity: 0.3;*/
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
+form .button1:active {
+  opacity: 1;
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  color: #79e3b6;
+}
+form .button2 {
+  opacity: 0.3;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+  color: #6f6cde;
+}
+form .button3 {
+  box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
+  color: #79e3b6;
+}
+form .button3:hover {
+  opacity: 1;
+  box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+}
