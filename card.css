@@ -18,3 +18,37 @@
     float: right;
     cursor: pointer;
 }
+.card .action{
+    cursor: pointer;
+    outline: none;
+    padding: 1em;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 8px;
+    font-family: 'Montserrat';
+    letter-spacing: .1em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.card .action.red{
+    background: orangered;
+    border: 1px solid orangered;
+    color: white;
+}
+.card .action.green{
+    background: limegreen;
+    border: limegreen;
+    color: white;
+}
+
+.card .action.red:active{
+    background: indianred;
+    border: 1px solid indianred;
+}
+.card .action.green:active{
+    background: green;
+    border: green;
+}
+.card .action:last-child{
+    float: right;
+}
