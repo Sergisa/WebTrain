@@ -9,13 +9,15 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    display: none;
+    background: #777777b3;
 }
 .modal_wrapper .modal .title{
     margin: 0.4em 0;
 }
 .modal_wrapper .modal{
     width: 30%;
-    margin: 0 auto;
+    margin: 1em auto auto;
     padding: 1rem;
     background-color: #ffffff;
     border-radius: 1em;
@@ -23,6 +25,7 @@ body {
 }
 
 .modal .btn{
+    outline: none;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
