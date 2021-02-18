@@ -29,26 +29,24 @@
     letter-spacing: .1em;
     font-weight: 600;
     text-transform: uppercase;
+    color: whitesmoke;
 }
 .card .action.red{
     background: orangered;
     border: 1px solid orangered;
-    color: white;
 }
 .card .action.green{
     background: limegreen;
     border: limegreen;
-    color: white;
 }
-
-.card .action.red:active{
-    background: indianred;
-    border: 1px solid indianred;
+.card .action.violet{
+    background: blueviolet;
+    border: 1px solid blueviolet;
 }
-.card .action.green:active{
-    background: green;
-    border: green;
+.card .footer{
+    justify-content: space-between;
+    display: flex;
 }
-.card .action:last-child{
-    float: right;
+.card .action:active{
+    filter: brightness(0.8);
 }
