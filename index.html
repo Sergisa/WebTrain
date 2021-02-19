@@ -6,8 +6,11 @@
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 			body{
-				background-color: darkgray;
+				
 				font-family: 'Montserrat';
+			}
+			.card h2{
+				font-weight: 500;
 			}
 			.card{
 				background-color: whitesmoke;
@@ -15,13 +18,18 @@
 				width: 70%;
 				box-shadow: 1px 1px 10px 1px #5363d8;
 				border-radius: 10px;
+				margin: 2em auto;
 			}
 		</style>
     </head>
     <body>
 		<h1>Page Title</h1>
-		<p id="wrapping">iojhehrioguh</p>
-		<button id="comand" class="fifth violet_button">Обернуть</button>
+		<div class="card" id="main_card">
+			<h2>Отображение массива</h2>
+			<p id="wrapping"></p>
+		</div>
+		
+		<button id="comand" class="">Перемешать</button>
 	</body>
 	
 	<script src="index.js"></script>
