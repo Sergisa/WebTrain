@@ -3,7 +3,10 @@ HTMLElement.prototype.wrap = function(wrapper){
     this.parentNode.insertBefore(wrapper, this);
     wrapper.appendChild(this);
 }
-var wrapperObject = document.createElement("div");
+HTMLElement.create = function(tagName){
+    return document.createElement(tagName);
+}
+var wrapperObject = HTMLElement.create("div");
 wrapperObject.classList.add('card');
 
 document.getElementById("comand").onclick = function(){
