@@ -1,5 +1,5 @@
-function shuffleArray(array){
-    return array.sort(() => Math.random() - 0.5);
+Array.prototype.shuffle = function(){
+    this.sort(() => Math.random() - 0.5);
 }
 var array = [
     "first",
@@ -8,6 +8,6 @@ var array = [
     "fourth"
 ]
 document.getElementById('comand').onclick = function(){
-    array = shuffleArray(array);
+    array.shuffle();
     document.getElementById("wrapping").innerHTML = array.toString().replaceAll(',', ', ');
 }
