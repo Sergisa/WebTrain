@@ -67,6 +67,66 @@
 			.btn, .btn:active, .fifth{
 				outline: 0;
 			}
+
+
+			.form__group {
+				position: relative;
+				padding: 15px 0 0;
+				margin-top: 10px;
+				width: 30%;
+			}
+
+			.form__field {
+				font-family: inherit;
+				width: 100%;
+				border: 0;
+				border-bottom: 2px solid #9b9b9b;
+				outline: 0;
+				font-size: 1.3rem;
+				color: #555;
+				padding: 7px 0;
+				background: transparent;
+				transition: border-color 0.2s;
+			}
+			.form__field::placeholder {
+				color: transparent;
+			}
+			.form__field:placeholder-shown ~ .form__label {
+				font-size: 1.3rem;
+				cursor: text;
+				top: 20px;
+			}
+
+			.form__label {
+				position: absolute;
+				top: 0;
+				display: block;
+				transition: 0.2s;
+				font-size: 1rem;
+				color: #9b9b9b;
+				}
+
+			.form__field:focus {
+				padding-bottom: 6px;
+				font-weight: 600;
+				border-width: 3px;
+				border-image: linear-gradient(to right, #11998e, #38ef7d);
+				border-image-slice: 1;
+			}
+			.form__field:focus ~ .form__label {
+				position: absolute;
+				top: 0;
+				display: block;
+				transition: 0.2s;
+				font-size: 1rem;
+				color: #11998e;
+				font-weight: 700;
+				}
+
+				/* reset input */
+			.form__field:required, .form__field:invalid {
+				box-shadow: none;
+			}
 		</style>
     </head>
     <body>
@@ -80,7 +140,13 @@
 				<button id="" class="btn save">Сохранить</button>
 			</div>
 		</div>
-		<button id="open_modal" class="fifth violet_button">Открыть окно</button>
+		
+		<div class="form__group field">
+			<input type="input" class="form__field" placeholder="Name" name="name" id="input_text" required />
+			<label for="name" class="form__label">Данные</label>
+		</div>
+
+		<button id="open_modal" class="fifth violet_button">Открыть окно с кодом</button>
 	</body>
 	<script src="qrcode.js"></script>
 	<script src="index.js"></script>
