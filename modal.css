@@ -46,6 +46,9 @@ body {
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
     color: #ffffff;
 }
+.modal .btn:active{
+    filter: brightness(0.8);    
+}
 .modal .btn.save{
     background-color: #2ecc71;
     border-color:#2ecc71;

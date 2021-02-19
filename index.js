@@ -1,4 +1,7 @@
 document.getElementById('open_modal').onclick = function(){
+    document.getElementById("qrcode").innerHTML = '';
+    new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
+    
     document.getElementById('main_modal').style.display = "block";
     return false;
 };
