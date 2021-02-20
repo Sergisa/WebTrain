@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 body {
     background: #f3f0f1;
@@ -61,4 +62,41 @@ body {
     color: #fff;
     outline: 0;
     box-shadow: 0 0 40px 40px #e74c3c inset;
+=======
+.overlay {
+  background-color: #555555a1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass {
+  text-align: left;
+  display: block;
+  font-size: 20px;
+  padding: 1em 0.7em;
+  color: black;
+  border-radius: 6px;
+  border: 1px solid #222;
+  font-weight: 500;
+  background-color: #ffffff34;
+  backdrop-filter: blur(2px);
+}
+.glass h3 {
+  margin: 0 auto;
+  font-weight: 600;
+}
+.glass .content {
+  font-weight: 400;
+  margin: 1rem 0;
+}
+.glass .red_button {
+  float: right;
+>>>>>>> Stashed changes
 }
