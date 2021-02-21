@@ -23,3 +23,22 @@
     letter-spacing: 1px;
     transition: all 2.9s ease-in-out;
 }
+.popup button.danger:before{
+  content: "\f0e2";
+  font-weight: 100;
+  font-family: 'FontAwesome';
+  margin-right: 5px;
+}
+.popup button.danger{
+  margin-left: 1em;
+  outline: 0;
+  cursor: pointer;
+  background: rgb(255 255 255 / 24%);
+  border: 0;
+  font-family: 'Montserrat';
+  padding: .3em .8em;
+  color: red;
+  font-weight: 600;
+  border-radius: 5px;
+  font-size: .87rem;
+}

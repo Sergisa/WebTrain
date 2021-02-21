@@ -3,12 +3,15 @@ function parent( elem ) {
 		return parent && parent.nodeType !== 11 ? parent : null;
 };
 function remove(event){
-  var removeDecline = document.createElement('button');
   var row = event.srcElement.offsetParent.parentNode;
-  var removeToast = Toast.makeText("Удаляем <br>" + row.innerHTML, Toast.LONG_DELAY);
+  var removeToast = Toast.makeText("Удаляем <br>" + row.innerHTML , Toast.LONG_DELAY);
   removeToast.show();
+  removeToast.onCanceled = function(){
+    removeToast.hide();
+    row.style.display = "table-row";
+  }
   removeToast.onHidden = function(){
-    row.remove();
+    if(row.hidden) row.remove();
   }
   row.style.display = 'none';
   return false;

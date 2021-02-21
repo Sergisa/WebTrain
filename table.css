@@ -15,7 +15,8 @@ table tr td{
 table td.control button{
   display: inline-block;
 }
-.popup button{
+.popup button.remove,
+.popup button.view{
     display: none;
 }
 table tr td.control button:active{
