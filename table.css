@@ -12,8 +12,11 @@ table tr{
 table tr td{
 
 }
-table tr td.control{
-
+table td.control button{
+  display: inline-block;
+}
+.popup button{
+    display: none;
 }
 table tr td.control button:active{
   filter: brightness(.9);

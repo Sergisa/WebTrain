@@ -4,12 +4,13 @@ function parent( elem ) {
 };
 function remove(event){
   var row = event.srcElement.offsetParent.parentNode;
-  row.remove();
-  console.log("Удаление", row);
+  Toast.makeText("Удаляем <br>" + row.innerHTML, Toast.SHORT_DELAY).show();
+  row.style.display = 'none';
+  //row.remove();
   return false;
 };
 function view(event){
-    console.log("Просмотр", event.srcElement.offsetParent.parentNode);
+    Toast.makeText("Просматриваем", Toast.SHORT_DELAY).show();
     return false;
 };
 
