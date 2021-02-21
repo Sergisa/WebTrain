@@ -9,8 +9,8 @@ table th{
 table tr{
 
 }
-table tr td{
-
+table tr .control{
+  width: auto;
 }
 table td.control button{
   display: inline-block;
