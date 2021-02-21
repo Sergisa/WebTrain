@@ -6,21 +6,22 @@
 		<style>
 			body {
 				padding: 1rem;
-				background: #f3f0f1;
+				background: #000;
+        color: white;
 				font-family: 'Montserrat', sans-serif;
 			}
 			h1{
 				font-weight: 500;
 			}
-			.violet_button{
+			.dark_button{
         color: white;
-				border: 1px solid darkviolet;
+				border: 0;
 				appearance: none;
 				box-sizing: border-box;
 				-webkit-appearance: none;
 					-moz-appearance: none;
 						appearance: none;
-				background-color: darkviolet;
+        background-color: rgb(255 255 255 / 24%);
 				border-radius: 0.6em;
 				cursor: pointer;
 				align-self: center;
@@ -51,7 +52,7 @@
 		</style>
     </head>
     <body>
-		<button class="btn violet_button" id="block_link">Открыть уведомление</button>
+		<button class="btn dark_button" id="block_link">Открыть уведомление</button>
 		<p id="one">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 			ut labore et dolore magna aliqua.
@@ -102,7 +103,7 @@
 			am at lectus urna duis convallis convallis tellus. Ac tortor vitae purus faucibus ornare
 			uspendisse sed nisi lacus. Pharetra magna ac placerat vestibulum.
 		</p>
-		
+
 		<script src="toast.js"></script>
 		<script src="index.js"></script>
     </body>
