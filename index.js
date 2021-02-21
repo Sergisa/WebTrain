@@ -3,10 +3,14 @@ function parent( elem ) {
 		return parent && parent.nodeType !== 11 ? parent : null;
 };
 function remove(event){
+  var removeDecline = document.createElement('button');
   var row = event.srcElement.offsetParent.parentNode;
-  Toast.makeText("Удаляем <br>" + row.innerHTML, Toast.SHORT_DELAY).show();
+  var removeToast = Toast.makeText("Удаляем <br>" + row.innerHTML, Toast.LONG_DELAY);
+  removeToast.show();
+  removeToast.onHidden = function(){
+    row.remove();
+  }
   row.style.display = 'none';
-  //row.remove();
   return false;
 };
 function view(event){

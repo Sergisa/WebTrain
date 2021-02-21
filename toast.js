@@ -28,5 +28,6 @@ Toast.prototype.show = function(){
   this.wrapper.classList.add('open');
   setTimeout(function(){
       _obj.wrapper.classList.remove('open');
+      if (_obj.onHidden!==undefined) _obj.onHidden();
   }, this.currentDuration);
 }
