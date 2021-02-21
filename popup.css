@@ -2,7 +2,7 @@
 .wrapper{
     text-align: center;
     bottom: -90px;
-    position: sticky;
+    position: absolute;
     width: 100%;
     transition: all 0.4s ease-in-out;
     display: none;
