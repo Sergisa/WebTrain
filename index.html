@@ -4,7 +4,6 @@
 		<title>Пример модального окна</title>
 		<link rel="stylesheet" href="popup.css">
 		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 			body {
 				padding: 1rem;
 				background: #f3f0f1;
@@ -14,13 +13,14 @@
 				font-weight: 500;
 			}
 			.violet_button{
-				border-style: solid;
+        color: white;
+				border: 1px solid darkviolet;
 				appearance: none;
 				box-sizing: border-box;
 				-webkit-appearance: none;
 					-moz-appearance: none;
 						appearance: none;
-				background-color: transparent;
+				background-color: darkviolet;
 				border-radius: 0.6em;
 				cursor: pointer;
 				align-self: center;
@@ -35,19 +35,14 @@
 				font-family: "Montserrat", sans-serif;
 				font-weight: 700;
 			}
-			a.btn:visited{
-				text-decoration: none;
-			}
 			.btn{
 				outline: none;
-    			display: inline-flex;
+    		display: block;
 			}
-			#ten{
-				color: darkviolet;
-				background-color: white;
-				margin: 1em;
-				padding: 0.7em;
-				border-radius: 8px;
+      .btn:active{
+				outline: none;
+    		display: block;
+        filter: brightness(.7);
 			}
 			p{
 				line-height: 1.9em;
@@ -56,60 +51,59 @@
 		</style>
     </head>
     <body>
-		<button class="btn violet_button" id="block_link">Открыть окно</button>
+		<button class="btn violet_button" id="block_link">Открыть уведомление</button>
 		<p id="one">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 			ut labore et dolore magna aliqua.
 			Vitae congue mauris rhoncus aenean vel elit.
 			Vitae aliquet nec ullamcorper sit amet risus nullam eget felis.
 			Eu feugiat pretium nibh ipsum consequat nisl vel.
-			Enim eu turpis egestas pretium aenean pharetra magna ac. Amet nisl suscipit adipiscing 
-			ibendum est ultricies integer quis auctor. Condimentum id venenatis a condimentum vitae. 
-			iam ut venenatis tellus in metus. Ligula ullamcorper malesuada proin libero nunc consequat 
-			nterdum varius. Ac tortor vitae purus faucibus ornare suspendisse sed. Et pharetra pharetra 
-			assa massa. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Nisl vel 
-			retium lectus quam id leo. Libero nunc consequat interdum varius sit amet. Lacus viverra 
-			itae congue eu consequat ac felis donec et. Gravida cum sociis natoque penatibus et. Libero 
-			d faucibus nisl tincidunt eget nullam. Scelerisque viverra mauris in aliquam sem. Proin 
-			ermentum leo vel orci. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. 
-			rna id volutpat lacus laoreet non. Pretium fusce id velit ut tortor pretium viverra 
-			uspendisse potenti. Amet est placerat in egestas erat imperdiet. Sed blandit libero 
-			olutpat sed cras ornare arcu dui. Nam at lectus urna duis convallis convallis tellus id. 
-			urabitur gravida arcu ac tortor. Diam sollicitudin tempor id eu nisl nunc. Tellus in hac 
-			abitasse platea dictumst vestibulum rhoncus est pellentesque. Ultrices mi tempus imperdiet 
-			ulla malesuada pellentesque elit eget gravida. Amet massa vitae tortor condimentum lacinia 
-			uis. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Vitae auctor 
-			u augue ut. Eu mi bibendum neque egestas. Senectus et netus et malesuada fames ac turpis 
-			gestas integer. Magna ac placerat vestibulum lectus. Neque sodales ut etiam sit amet. Quam 
-			d leo in vitae turpis massa sed elementum. Sed libero enim sed faucibus turpis. Lacus vel 
-			acilisis volutpat est velit egestas dui id ornare. Purus in massa tempor nec feugiat nisl 
-			retium fusce. Erat pellentesque adipiscing commodo elit at imperdiet. Facilisis sed odio 
-			morbi quis commodo odio aenean. Ullamcorper morbi tincidunt ornare massa eget egestas 
-			urus. Dictum non consectetur a erat nam at lectus urna. Molestie at elementum eu facilisis 
-			ed odio morbi. Fermentum posuere urna nec tincidunt praesent. Eget velit aliquet sagittis 
-			d consectetur. In mollis nunc sed id semper risus in hendrerit. Turpis nunc eget lorem 
-			olor sed. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt. 
-			t urna condimentum mattis pellentesque id. Duis at tellus at urna. Ultrices dui sapien eget 
-			i proin sed libero enim sed. Porttitor leo a diam sollicitudin. Venenatis tellus in metus 
+			Enim eu turpis egestas pretium aenean pharetra magna ac. Amet nisl suscipit adipiscing
+			ibendum est ultricies integer quis auctor. Condimentum id venenatis a condimentum vitae.
+			iam ut venenatis tellus in metus. Ligula ullamcorper malesuada proin libero nunc consequat
+			nterdum varius. Ac tortor vitae purus faucibus ornare suspendisse sed. Et pharetra pharetra
+			assa massa. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Nisl vel
+			retium lectus quam id leo. Libero nunc consequat interdum varius sit amet. Lacus viverra
+			itae congue eu consequat ac felis donec et. Gravida cum sociis natoque penatibus et. Libero
+			d faucibus nisl tincidunt eget nullam. Scelerisque viverra mauris in aliquam sem. Proin
+			ermentum leo vel orci. Rhoncus dolor purus non enim praesent elementum facilisis leo vel.
+			rna id volutpat lacus laoreet non. Pretium fusce id velit ut tortor pretium viverra
+			uspendisse potenti. Amet est placerat in egestas erat imperdiet. Sed blandit libero
+			olutpat sed cras ornare arcu dui. Nam at lectus urna duis convallis convallis tellus id.
+			urabitur gravida arcu ac tortor. Diam sollicitudin tempor id eu nisl nunc. Tellus in hac
+			abitasse platea dictumst vestibulum rhoncus est pellentesque. Ultrices mi tempus imperdiet
+			ulla malesuada pellentesque elit eget gravida. Amet massa vitae tortor condimentum lacinia
+			uis. Dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo. Vitae auctor
+			u augue ut. Eu mi bibendum neque egestas. Senectus et netus et malesuada fames ac turpis
+			gestas integer. Magna ac placerat vestibulum lectus. Neque sodales ut etiam sit amet. Quam
+			d leo in vitae turpis massa sed elementum. Sed libero enim sed faucibus turpis. Lacus vel
+			acilisis volutpat est velit egestas dui id ornare. Purus in massa tempor nec feugiat nisl
+			retium fusce. Erat pellentesque adipiscing commodo elit at imperdiet. Facilisis sed odio
+			morbi quis commodo odio aenean. Ullamcorper morbi tincidunt ornare massa eget egestas
+			urus. Dictum non consectetur a erat nam at lectus urna. Molestie at elementum eu facilisis
+			ed odio morbi. Fermentum posuere urna nec tincidunt praesent. Eget velit aliquet sagittis
+			d consectetur. In mollis nunc sed id semper risus in hendrerit. Turpis nunc eget lorem
+			olor sed. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt.
+			t urna condimentum mattis pellentesque id. Duis at tellus at urna. Ultrices dui sapien eget
+			i proin sed libero enim sed. Porttitor leo a diam sollicitudin. Venenatis tellus in metus
 			ulputate eu scelerisque. Nulla aliquet enim tortor at auctor. Quam nulla porttitor massa id
-			neque aliquam vestibulum. Dignissim convallis aenean et tortor. Aliquet risus feugiat in 
-			nte. Donec massa sapien faucibus et molestie. Gravida dictum fusce ut placerat orci nulla 
-			ellentesque dignissim enim. Pellentesque dignissim enim sit amet venenatis urna cursus. 
-			ommodo nulla facilisi nullam vehicula. Vel facilisis volutpat est velit egestas dui id 
-			rnare arcu. Mauris pellentesque pulvinar pellentesque habitant. Elit ullamcorper dignissim 
-			ras tincidunt lobortis feugiat vivamus. Iaculis eu non diam phasellus vestibulum lorem sed 
-			isus. Nunc mi ipsum faucibus vitae aliquet nec. Eu turpis egestas pretium aenean pharetra 
-			agna ac placerat vestibulum. Tincidunt vitae semper quis lectus nulla at volutpat diam. 
-			lit duis tristique sollicitudin nibh sit amet commodo. Eu nisl nunc mi ipsum faucibus. 
-			ursus turpis massa tincidunt dui. Aliquet eget sit amet tellus cras adipiscing. Diam vel 
-			uam elementum pulvinar etiam non quam lacus suspendisse. Auctor augue mauris augue neque 
-			ravida in fermentum et sollicitudin. Urna nunc id cursus metus aliquam eleifend mi. Erat 
-			am at lectus urna duis convallis convallis tellus. Ac tortor vitae purus faucibus ornare 
+			neque aliquam vestibulum. Dignissim convallis aenean et tortor. Aliquet risus feugiat in
+			nte. Donec massa sapien faucibus et molestie. Gravida dictum fusce ut placerat orci nulla
+			ellentesque dignissim enim. Pellentesque dignissim enim sit amet venenatis urna cursus.
+			ommodo nulla facilisi nullam vehicula. Vel facilisis volutpat est velit egestas dui id
+			rnare arcu. Mauris pellentesque pulvinar pellentesque habitant. Elit ullamcorper dignissim
+			ras tincidunt lobortis feugiat vivamus. Iaculis eu non diam phasellus vestibulum lorem sed
+			isus. Nunc mi ipsum faucibus vitae aliquet nec. Eu turpis egestas pretium aenean pharetra
+			agna ac placerat vestibulum. Tincidunt vitae semper quis lectus nulla at volutpat diam.
+			lit duis tristique sollicitudin nibh sit amet commodo. Eu nisl nunc mi ipsum faucibus.
+			ursus turpis massa tincidunt dui. Aliquet eget sit amet tellus cras adipiscing. Diam vel
+			uam elementum pulvinar etiam non quam lacus suspendisse. Auctor augue mauris augue neque
+			ravida in fermentum et sollicitudin. Urna nunc id cursus metus aliquam eleifend mi. Erat
+			am at lectus urna duis convallis convallis tellus. Ac tortor vitae purus faucibus ornare
 			uspendisse sed nisi lacus. Pharetra magna ac placerat vestibulum.
 		</p>
-		<div id="main_popup" class="popup">
-			Сообщение уведомления
-		</div>
+		
+		<script src="toast.js"></script>
 		<script src="index.js"></script>
     </body>
 </html>

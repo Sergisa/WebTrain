@@ -5,6 +5,7 @@
     position: sticky;
     width: 100%;
     transition: all 0.4s ease-in-out;
+    display: none;
 }
 .wrapper.open{
     bottom: 0px;
