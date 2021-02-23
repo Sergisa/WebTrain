@@ -1,19 +1,20 @@
+
 function parent( elem ) {
 		var parent = elem.parentNode;
 		return parent && parent.nodeType !== 11 ? parent : null;
 };
 function remove(event){
   var row = event.srcElement.offsetParent.parentNode;
-  var removeToast = Toast.makeText("Удаляем <br>" + row.innerHTML , Toast.LONG_DELAY);
+  //var removeToast = Toast.makeText("Удалено <br>" + row.innerHTML , Toast.LONG_DELAY);
+  var removeToast = CancelableToast.makeText("Удалено <br>" + row.innerHTML , 2500);
+  row.hidden = true;
   removeToast.show();
   removeToast.onCanceled = function(){
-    removeToast.hide();
-    row.style.display = "table-row";
+    row.hidden = false;
   }
   removeToast.onHidden = function(){
     if(row.hidden) row.remove();
   }
-  row.style.display = 'none';
   return false;
 };
 function view(event){
