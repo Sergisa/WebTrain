@@ -2,80 +2,6 @@
     <head>
     	<meta charset="utf-8">
 		<title>Пример модального окна</title>
-<<<<<<< Updated upstream
-		<link rel="stylesheet" href="modal.css">
-		<style>
-			h1{
-				font-weight: 500;
-			}
-			.fifth {
-				border-color: #8e44ad;
-				border-radius: 0;
-				color: #8e44ad;
-				position: relative;
-				overflow: hidden;
-				z-index: 1;
-				transition: color 150ms ease-in-out;
-			}
-			.fifth:after {
-				content: "";
-				position: absolute;
-				display: block;
-				top: 0;
-				left: 50%;
-				transform: translateX(-50%);
-				width: 0;
-				height: 100%;
-				background: #8e44ad;
-				z-index: -1;
-				transition: width 150ms ease-in-out;
-			}
-			.fifth:hover {
-				color: #fff;
-			}
-			.fifth:hover:after {
-				width: 110%;
-			}
-			.violet_button{
-				border-style: solid;
-				appearance: none;
-				box-sizing: border-box;
-				-webkit-appearance: none;
-					-moz-appearance: none;
-						appearance: none;
-				background-color: transparent;
-				border-radius: 0.6em;
-				cursor: pointer;
-				display: flex;
-				align-self: center;
-				font-size: 1rem;
-				font-weight: 400;
-				line-height: 1;
-				margin: 20px;
-				padding: 1em 1.8em;
-				text-decoration: none;
-				text-align: center;
-				text-transform: uppercase;
-				font-family: "Montserrat", sans-serif;
-				font-weight: 700;
-			}
-		</style>
-    </head>
-    <body>
-		<h1>Page Title</h1>
-		<div class="modal_wrapper" id="main_modal">
-			<div class="modal">
-				<h2 class="title">Modal 3 Title</h1>
-				<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex dicta maiores libero minus obcaecati iste optio, eius labore repellendus.</p>
-				<button id="close_modal" class="btn close">Отмена</button>
-				<button id="" class="btn save">Сохранить</button>
-			</div>
-		</div>
-		<button id="open_modal" class="fifth violet_button">Открыть окно</button>
-		<script src="index.js"></script>
-    </body>
-</html>
-=======
     <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="buttons.css">
   		<style>
@@ -112,4 +38,3 @@
 
 	<script src="index.js"></script>
 </html>
->>>>>>> Stashed changes
