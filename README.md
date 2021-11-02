@@ -46,6 +46,15 @@
 - Простое создание классовой модели для Toast *(Показать, Скрыть)* ***( ES6 )!***
 - Создание полноценной классовой модели подтверждающего Toast ***( ES6 )!***
 
+**scss-compilation**
+- команды для создания CSS файла из SCSS  
+  `scss src/scss/index.scss dist/css/index.css --sourcemap=none --style expanded`  
+  `scss src/scss/index.scss dist/css/index.min.css --sourcemap=none --style compressed` 
+- команды для создания CSS файла из SCSS c картой  
+  `scss src/scss/index.scss dist/css/index.css --sourcemap=file --style expanded`  
+  `scss src/scss/index.scss dist/css/index.min.css --sourcemap=file --style compressed` 
+
+
 ### Как скачать все примеры и управлять вариантами исполнения
 #### Скачивание
 Для скачивания примеров необходимо набрать команду `git clone https://github.com/Sergisa/WebTrain.git`.
