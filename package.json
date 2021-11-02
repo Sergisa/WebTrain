@@ -1,0 +1,25 @@
+{
+  "name": "webtrain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss-min": "scss src/scss/index.scss dist/css/index.min.css --sourcemap=file --style compressed",
+    "scss-exp": "scss src/scss/index.scss dist/css/index.css --sourcemap=none --style expanded",
+    "scss": "npm run scss-min && npm run scss-exp",
+    "compile-js": "uglifyjs src/js/index.js -o dist/js/index.min.js --source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergisa/WebTrain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sergisa/WebTrain/issues"
+  },
+  "homepage": "https://github.com/Sergisa/WebTrain#readme",
+  "devDependencies": {
+    "uglify-js": "^3.14.3"
+  }
+}
