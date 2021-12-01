@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4"
+  },
+  "name": "webtrain",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "js-babel": "babel src/js/BaseComponent.js --out-dir dist/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergisa/WebTrain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sergisa/WebTrain/issues"
+  },
+  "homepage": "https://github.com/Sergisa/WebTrain#readme"
+}
