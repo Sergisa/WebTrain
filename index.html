@@ -10,23 +10,48 @@
 </body>
 <!--<script src="jquery.min.js"></script>-->
 <script>
-    function $(selector){
-        const element = document.querySelectorAll(selector);
+    function $(selector) {
+        const elements = document.querySelectorAll(selector);
         return {
-            element,
+            elements: elements,
             // element:element,
-            attr: function (key, value){
-                console.log(element)
-                this.element.setAttribute(key, value);
+            attr: function (key, value) {
+                this.elements.forEach((element) => element.setAttribute(key, value));
                 return this;
             },
             html: function (text) {
-                if(text === undefined){
-                    return this.element.innerHTML;
-                }else{
-                    this.element.innerHTML = text;
+                if (text === undefined) {
+                    return this.elements[0].innerHTML;
+                } else {
+                    this.elements.forEach(element => element.innerHTML = text);
                     return this;
                 }
+            },
+            addClass: function (className) {
+                this.elements.forEach((element) => {
+                    if (element.classList.contains(className)) {
+                        element.classList.add(className)
+                    }
+                });
+                return this;
+            },
+            removeClass: function (className) {
+                this.elements.forEach((element) => element.classList.remove(className));
+                return this;
+            },
+            css: function (styles) {
+                for (const style in styles) {
+                    this.elements.forEach((element) => element.style[style] = styles[style]);
+                }
+                return this;
+            },
+            appendTo: function (element) {
+                element.appendChild(this.elements);
+                return this;
+            },
+            append: function (appendingElement) {
+                this.elements.forEach((element) => element.appendChild(appendingElement));
+                return this;
             }
         };
     }
@@ -37,12 +62,14 @@
     $('#demoBlock').html('Hello world')
         .html('World hello')
         .attr('myAttribute', "q")
-        /*.css('color', 'red')
+        .css('color', 'red')
         .css({
             'font-size': '30px',
             'background-color': '#ffcc44'
-        })*/
-    alert( $('#demoBlock').html() );
+        })
+        .addClass("one")
+        .addClass("two three")
+    alert($('#demoBlock').html());
     /*const myBlock = document.getElementById('demoBlock');
     myBlock.innerHTML = "Hello world";
     myBlock.setAttribute('myAttribute', 'q');
