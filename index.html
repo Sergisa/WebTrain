@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="block" id="demoBlock"></div>
+<div class="block" id="anotherDemoBlock"></div>
+</body>
+<!--<script src="jquery.min.js"></script>-->
+<script>
+    function $(selector){
+        const element = document.querySelectorAll(selector);
+        return {
+            element,
+            // element:element,
+            attr: function (key, value){
+                console.log(element)
+                this.element.setAttribute(key, value);
+                return this;
+            },
+            html: function (text) {
+                if(text === undefined){
+                    return this.element.innerHTML;
+                }else{
+                    this.element.innerHTML = text;
+                    return this;
+                }
+            }
+        };
+    }
+</script>
+
+<script>
+
+    $('#demoBlock').html('Hello world')
+        .html('World hello')
+        .attr('myAttribute', "q")
+        /*.css('color', 'red')
+        .css({
+            'font-size': '30px',
+            'background-color': '#ffcc44'
+        })*/
+    alert( $('#demoBlock').html() );
+    /*const myBlock = document.getElementById('demoBlock');
+    myBlock.innerHTML = "Hello world";
+    myBlock.setAttribute('myAttribute', 'q');
+    myBlock.style.color = 'red';
+    myBlock.style.backgroundColor = '#ffcc44';
+    myBlock.style.fontSize = '30px';*/
+</script>
+</html>

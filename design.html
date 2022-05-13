@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: #2B2C3A;
+            color: white;
+        }
+
+        .card {
+            background-color: rgb(152, 148, 253);
+            margin: 28px;
+        }
+        .card .content{
+            padding: 15px 15px 33px;
+        }
+        .content__main .subTitle {
+            color: rgba(255, 255, 255, 50%);
+        }
+
+        .content__main .title {
+            margin-bottom: 10px ;
+            color: white;
+        }
+        .content__footer{
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .card span.type{
+            padding: 7px;
+            background-color: blueviolet;
+            color: white;
+            border-radius: 4px;
+            position: relative;
+            top: 5px;
+            left: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <span class="type">Лекция</span>
+    <img src="image.jpg" alt="Картинка">
+    <div class="content">
+        <div class="content__main">
+            <div class="title">Структура HTML</div>
+            <div class="subTitle">Назначение блоков: head, body</div>
+        </div>
+        <div class="content__footer">
+            <div class="date">01.02.2022</div>
+            <input type="button" class="cta" value="Смотреть"/>
+        </div>
+
+        <!--            <div class="main"></div>-->
+        <!--            <div class="footer"></div>-->
+    </div>
+</div>
+
+
+<div class="card">
+
+</div>
+</body>
+</html>
