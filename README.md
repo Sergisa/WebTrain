@@ -12,6 +12,11 @@
 * qrcode
 * table
 * toast
+* scss-compilation
+* JS Bundle
+* Babel transpillation
+* Webpack
+* JQuery
 
 **form**
 - Примеры дизайна и конструирования форм.
@@ -52,7 +57,19 @@
   `scss src/scss/index.scss dist/css/index.min.css --sourcemap=none --style compressed` 
 - команды для создания CSS файла из SCSS c картой  
   `scss src/scss/index.scss dist/css/index.css --sourcemap=file --style expanded`  
-  `scss src/scss/index.scss dist/css/index.min.css --sourcemap=file --style compressed` 
+  `scss src/scss/index.scss dist/css/index.min.css --sourcemap=file --style compressed`
+
+**rollup-bundle**
+- Пример сборки JS файла из нескольких с помощью библиотеки Rollup
+
+**babel-transpile**
+- Пример преобразования (Транспилляции) кода с использованием библиотеки babel
+
+**webpack**
+- пример сборки стилей и JS файлов с помощью webpack
+
+**JQuery**
+- пример нескольких функций JQuery библиотеки
 
 
 ### Как скачать все примеры и управлять вариантами исполнения
