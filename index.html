@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Откройте консоль там всё</h4>
+</body>
+<script>
+    let age = 34;
+    let group = "20ИТ-ПИ(б/о)ПИП-1";
+
+    const getGroup = () => {
+        return this.group;
+    }
+
+    function getGender() {
+        return this.gender;
+    }
+
+    const student = {
+        name: "Sergisa",
+        age,
+        group: group,
+        gender: 'male',
+        height: 40,
+        getName() {
+            return this.name;
+        },
+        getAge: function () {
+            return this.age
+        },
+        getHeight: () => {
+            return this.height
+        },
+        getGroup,
+        getGender
+    }
+
+    console.log("%c [FUNCTION] GetName", 'font-weight:bolder; color: #2196F3', student.getName())
+    console.log("%c [FUNCTION] GetAge", 'font-weight:bolder; color: #2196F3', student.getAge())
+
+    console.log("%c [FUNCTION] GetGroup", 'padding: 20px 0; font-weight:bolder; color: #2196F3', student.getGroup()) // undefined
+
+    console.log("%c [FUNCTION] getGender", 'font-weight:bolder; color: #2196F3', getGender()) // undefined
+    console.log("%c [FUNCTION] getGender", 'font-weight:bolder; color: #2196F3', getGender.call(student))
+    console.log("%c [FUNCTION] getGender", 'font-weight:bolder; color: #2196F3', student.getGender())
+
+    console.log("%c [FUNCTION] getHeight", 'font-weight:bolder; color: #2196F3', student.getHeight())
+</script>
+</html>
