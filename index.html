@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-size: 2em;
+        }
+
+        .float-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: .4rem;
+            background-color: #E91E63;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: medium;
+            cursor: pointer;
+        }
+
+        .float-button:active {
+            filter: brightness(80%);
+        }
+
+        .float-button:hover {
+            filter: brightness(90%);
+        }
+    </style>
+</head>
+<body>
+<button class="float-button" onclick="scrollBottom()">Прокрутить вниз</button>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam distinctio dolore, doloremque dolorum ducimus esse
+exercitationem explicabo fugit impedit ipsa libero maxime nostrum nulla quae quam quisquam, rem similique velit
+voluptatem, voluptates! Accusantium aliquid amet aperiam aut consequatur delectus earum fuga, fugit id iste laboriosam
+laborum minus nulla obcaecati optio, quae suscipit. Accusamus amet consectetur illum in ipsam laudantium modi qui
+quibusdam sequi voluptates. Adipisci asperiores aut debitis, distinctio doloremque dolorum ducimus enim ex excepturi
+expedita facilis fugiat incidunt labore laboriosam nesciunt numquam odit pariatur quae quia quibusdam sunt, vel
+voluptatem. Asperiores labore modi perspiciatis quis ratione. Culpa, distinctio doloribus excepturi exercitationem
+expedita facere ipsum maiores minus nemo non nostrum nulla officiis pariatur possimus provident quae quasi recusandae
+reiciendis repellat, reprehenderit sit temporibus tenetur. Cupiditate libero minima odio quidem! Ad blanditiis dolor
+dolore, dolores dolorum enim illum incidunt inventore iste nam nihil odio optio quia quisquam sit ullam veniam? Ad animi
+aspernatur assumenda autem culpa delectus deleniti dolore dolores eius et hic, maiores molestiae molestias nam nemo
+neque porro quam quidem quis quo sit suscipit totam vel veniam voluptates! Adipisci aspernatur consectetur debitis
+ducimus fuga, illum incidunt itaque modi molestias nemo nobis nostrum obcaecati optio perferendis quae recusandae
+repellat rerum sapiente sed voluptate? Aliquam eos fuga fugiat harum ipsa magni molestias nisi odit repellendus
+voluptas! Dolor, ducimus eum eveniet explicabo ipsa minus necessitatibus porro quo sit veritatis! Aspernatur dolore
+ducimus eligendi est impedit molestias mollitia nisi, placeat porro. Aut culpa debitis distinctio facere id ipsam magni
+molestiae nemo obcaecati, praesentium quos repellendus, unde veniam, vero voluptate. Accusamus culpa doloremque iusto
+maiores quo. Accusantium adipisci cum deleniti deserunt, dolore eaque eius eos excepturi, fugit incidunt ipsa ipsum
+minima modi, molestias mollitia obcaecati praesentium provident quod quos unde veniam vero voluptas. At autem dolorem
+doloremque ipsam labore magnam natus repellendus saepe, tempore totam? Accusantium architecto asperiores aut doloremque
+excepturi minus nisi praesentium? Fuga non repellat tempora? Ab alias deleniti eum laudantium, obcaecati recusandae rem
+sequi vero vitae voluptate? Dolorem ipsa minus odit officiis quo tempore. Ab aliquid architecto aspernatur blanditiis
+consectetur consequatur dolor eius eos esse et eveniet explicabo facilis fugiat, iste itaque labore laboriosam maxime
+minus nostrum nulla obcaecati officiis placeat, qui sequi temporibus totam velit voluptatum. Quos, ratione, sunt. Animi,
+at aut, eos est eveniet expedita, magni maiores nobis non omnis quia quisquam quos sapiente sequi sunt tenetur veniam
+voluptate voluptatibus. Asperiores aut blanditiis, corporis cum dolores doloribus earum error, est hic in itaque magnam
+modi nesciunt nihil nulla obcaecati odit optio quia quidem ut. Dignissimos, eveniet, quia! Aperiam architecto at,
+consequuntur cum dolorem dolorum est excepturi fugiat inventore minima neque non pariatur quia, quod repellat, sed ut
+veniam voluptatum. Assumenda at autem beatae consectetur corporis culpa, delectus esse est et eveniet facere, ipsam
+ipsum laboriosam natus necessitatibus neque, nulla numquam officiis perferendis quas reiciendis suscipit tempora
+voluptatem. A ad aliquid aperiam consequatur corporis cum deserunt dolores ducimus error ex excepturi incidunt ipsa
+laboriosam laudantium magni modi molestiae nam nemo nisi nostrum, odit perspiciatis quisquam quos rerum suscipit vel
+voluptatum?
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="src/js/arrayExtension.js"></script>
+<script src="src/js/console.js"></script>
+<script>
+    function scrollBottom() {
+        $.moveBottom()
+    }
+
+    Logger.print('green', "[HELLO]")
+    Logger.print('blue', "[HELLO]")
+    Logger.print('red', "[HELLO]")
+</script>
+</html>

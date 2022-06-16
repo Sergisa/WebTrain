@@ -1,0 +1,22 @@
+{
+  "name": "webtrain",
+  "version": "1.0.0",
+  "description": "![alt text](https://github.com/Sergisa/WebTrain/blob/master/webTrain.png?raw=true)",
+  "main": "index.js",
+  "scripts": {
+    "compile": "terser src/js/arrayExtension.js src/js/console.js -o dist/js/bundle.min.js -c negate_iife=false,ecma=5,ie8=true -m"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergisa/WebTrain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sergisa/WebTrain/issues"
+  },
+  "homepage": "https://github.com/Sergisa/WebTrain#readme",
+  "devDependencies": {
+    "terser": "^5.14.1"
+  }
+}
