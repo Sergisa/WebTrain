@@ -1,12 +1,14 @@
 module.exports = {
-  comments: false,
-  presets: [
-    [
-      '@babel/env',
-      {
-        loose: true,
-        modules: false,
-      }
-    ],
-  ]
+    comments: false,
+    minified: true,
+    compact: true,
+    presets: [
+        [
+            '@babel/env',
+            {
+                loose: true,
+                modules: false,
+            }
+        ],
+    ]
 };
