@@ -1,0 +1,22 @@
+{
+  "name": "webtrain",
+  "version": "1.0.0",
+  "description": "![alt text](https://github.com/Sergisa/WebTrain/blob/master/webTrain.png?raw=true)\r # Примеры по веб программированию\r ## Вступление\r Темы на данном ресурсе разделены по веткам. Основная **master** ветка не содержит никакого кода. История изменений в этой ветке это лишь изменения данного README файла.\r Отдельный пример является отдельной веткой, а изменения на ней разными вариациями примера.\r Набор веток:\r * form\r * function\r * icons\r * links\r * modal\r * qrcode\r * table\r * toast\r * scss-compilation\r * JS Bundle\r * Babel transpillation\r * Webpack\r * JQuery",
+  "main": "calc.js",
+  "scripts": {
+    "min-js": "terser calc.js -o bundle-terser.min.js --safari10 -c ecma=5,ie8=true,drop_console=true -m"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergisa/WebTrain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sergisa/WebTrain/issues"
+  },
+  "homepage": "https://github.com/Sergisa/WebTrain#readme",
+  "devDependencies": {
+    "terser": "^5.15.1"
+  }
+}
