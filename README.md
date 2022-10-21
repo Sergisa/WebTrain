@@ -115,8 +115,8 @@ $students = [
 ```injectablephp
 // $students = getPDO()->query('SELECT * FROM students')->fetchAll(PDO::FETCH_ASSOC);
 $students = [
-    [<Object>], //Первая строка базы
-    [<Object>] //Вторая строка базы
+    <Object>, //Первая строка базы
+    <Object> //Вторая строка базы
 ]
 ```
 
