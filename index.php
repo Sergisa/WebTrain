@@ -63,6 +63,9 @@ include 'db.php';
     }
     ?>
 </p>
-<button>Click me</button>
+
+<form action="addStudent.php">
+    <button type="submit">Добавить студента</button>
+</form>
 </body>
 </html>
