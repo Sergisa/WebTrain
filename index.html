@@ -58,9 +58,19 @@
                 this.elements.forEach((element) => element.classList.remove(className));
                 return this;
             },
-            css: function (styles) {
-                for (const style in styles) {
-                    this.elements.forEach((element) => element.style[style] = styles[style]);
+            css: function (style, value) {
+                const applyStyleList = (styles) => {
+                    for (const singleStyle in styles) {
+                        this.elements.forEach((element) => element.style[singleStyle] = styles[singleStyle]);
+                    }
+                }
+
+                if (typeof style === "object") {
+                    applyStyleList(style)
+                } else if (typeof style === "string") {
+                    let object = {};
+                    object[style] = value
+                    applyStyleList(object)
                 }
                 return this;
             },
@@ -77,11 +87,10 @@
 </script>
 
 <script>
-
     $('#demoBlock').html('Hello world')
         .html('World hello')
         .attr('myAttribute', "q")
-        .css('color', 'red')
+        .css('color', '#e74c3c')
         .css({
             'font-size': '30px',
             'background-color': '#2c3e50',
@@ -91,12 +100,17 @@
         })
         .addClass("one")
         .addClass("two three")
-    /*alert($('#demoBlock').html());*/
-    /*const myBlock = document.getElementById('demoBlock');
+
+    const myBlock = document.getElementById('anotherDemoBlock');
     myBlock.innerHTML = "Hello world";
     myBlock.setAttribute('myAttribute', 'q');
-    myBlock.style.color = 'red';
-    myBlock.style.backgroundColor = '#ffcc44';
-    myBlock.style.fontSize = '30px';*/
+    myBlock.style.color = '#2ecc71';
+
+    myBlock.style.fontSize = '30px';
+    myBlock.style.backgroundColor = '#2c3e50';
+    myBlock.style.display = 'inline-flex';
+    myBlock.style.padding = '.5em';
+    myBlock.style.borderRadius = '.3em';
+
 </script>
 </html>
