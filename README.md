@@ -55,7 +55,7 @@ $('div').toggleClass('active', 'disabled').css('backgroundColor', 'red');
 
 > Данный пример содержится в файле [simple.html](https://github.com/Sergisa/WebTrain/blob/JQuery/simple.html)
 
-Так же библиотеку jQuery отличает от обычно JS еще и тот факт, что функции, оперирующие над набором тегов можно
+Так же библиотеку jQuery отличает от обычного JS еще и тот факт, что функции, оперирующие над набором тегов можно
 вызывать по цепочке. То есть когда мы хотим выполнить несколько действий мы должны их выполнять по одному на каждой
 строчке, в то время как при использовании jQuery мы можем их выполнить цепочкой. Например:
 
@@ -76,30 +76,30 @@ element.appendChild(newSpan)//Добавить тэг
 ```javascript
 $('#myElement')
     .css('color', '#5b5f97') //установить css свойство
-    .removeClass('visible')
-    .append(
-        $('<span></span>')
-            .html("SomeSpan")
-            .css({
+    .removeClass('visible') //Удалить класс
+    .append( //Добавить в конец тэга
+        $('<span></span>') //Создание нового тэга
+            .html("SomeSpan") //Установка содержимого тега
+            .css({ // Установка css свойств
                 backgroundColor: "#B8B8D1",
                 padding: "0.5rem",
                 borderRadius: "0.25rem"
             })
-    )//Удалить класс
+    )
 ```
 
 А можно даже было зайти и с другой стороны и начинать действия от создания внутреннего элемента:
 
 ```javascript
-$('<span></span>')
-    .html("SomeSpan")
-    .css({
+$('<span></span>') //Создание тега
+    .html("SomeSpan") //Установка содержимого тэга
+    .css({ //Установка css свойств
         backgroundColor: "#B8B8D1",
         padding: "0.5rem",
         borderRadius: "0.25rem"
     })
-    .appendTo(
-        $('#myElement ').css('color', '#5b5f97').removeClass('visible')
+    .appendTo( //Добавить в конец К ->
+        $('#myElement ').css('color', '#5b5f97').removeClass('visible') //Выборка элемента -> установка css -> удаление класса
     )
 ```
 
