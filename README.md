@@ -115,7 +115,7 @@ $('<span></span>')
 
 А что если мы сами попытаемся создать свой jQuery?
 Давайте сделаем свой jQuery, который сможет работать лишь над одним элементом, и у которого есть операции `html()`,
-`addClass()` и `removeClass()`.
+`addClass()`, `removeClass()` и `append()`.  
 Для начала образуем свой объект который будет нам возвращать функция `$()`.
 
 ```javascript
@@ -129,9 +129,9 @@ function $(stringSelector) {
 Отлично, теперь у нас есть объект с единственным пока свойством **mainObject**. Его теперь можно использовать:
 ``var myObject = $("#myDiv")`` Теперь рядом с этим объектом давайте создадим функции которые будут производить операции
 над ним. Начнём с функции `html()`. В jQuery функция устроена таким образом, что если в функцию передан аргумент, то эта
-функция должна возвращать тот объект, который мы только что выстроили, для того чтобы можно было продолжить использовать
-другие функции, имеющиеся в этом объекте. А если аргументов не передано то возвращать она должна содержимое нашего HTML
-компонента.
+функция должна заменить содержимое HTML блока и вернуть наш объект, который мы только что выстроили, для того чтобы
+можно было продолжить использовать другие функции, имеющиеся в этом объекте. А если аргументов не передано то возвращать
+она должна содержимое нашего HTML компонента.
 
 ```javascript
 function $(stringSelector) {
@@ -144,6 +144,27 @@ function $(stringSelector) {
                 this.mainObject.innerHTML = string;
                 return this;
             }
+        }
+    }
+}
+```
+
+Добавим так же функцию `append()` которая просто прибавляет к тэгу содержимое.
+
+```javascript
+function $(stringSelector) {
+    return {
+        mainObject: document.querySelector(stringSelector),
+        html: function (string) {
+            if (string === undefined) {
+                return this.mainObject.innerHTML;
+            } else {
+                this.mainObject.innerHTML = string;
+                return this;
+            }
+        },
+        append: function (string) {
+            this.mainObject.innerHTML += string;
         }
     }
 }
@@ -163,6 +184,9 @@ function $(stringSelector) {
                 this.mainObject.innerHTML = string;
                 return this;
             }
+        },
+        append: function (string) {
+            this.mainObject.innerHTML += string;
         },
         addClass: function (singleClassName) {
             this.mainObject.classList.add(singleClassName);

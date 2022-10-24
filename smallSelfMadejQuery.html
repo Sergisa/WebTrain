@@ -40,6 +40,10 @@
                     return this;
                 }
             },
+            append: function (string) {
+                this.mainObject.innerHTML += string;
+                return this;
+            },
             addClass: function (singleClassName) {
                 this.mainObject.classList.add(singleClassName);
                 return this;
@@ -54,7 +58,7 @@
 
 <script>
     console.log(
-        $('#demoBlock').removeClass('example1').addClass('example2').html('Получилось').html()
+        $('#demoBlock').removeClass('example1').addClass('example2').append(' Получилось').html()
     );
 </script>
 </html>
