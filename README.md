@@ -53,7 +53,7 @@ $('div').toggleClass('active', 'disabled').css('backgroundColor', 'red');
 
 ## Цепочный вызов
 
-> Данный пример содержится в файле simple.html
+> Данный пример содержится в файле [simple.html](https://github.com/Sergisa/WebTrain/blob/JQuery/simple.html)
 
 Так же библиотеку jQuery отличает от обычно JS еще и тот факт, что функции, оперирующие над набором тегов можно
 вызывать по цепочке. То есть когда мы хотим выполнить несколько действий мы должны их выполнять по одному на каждой
@@ -105,13 +105,15 @@ $('<span></span>')
 
 ## Минусы
 
-> Данный пример лежит в файле problem.html
+> Данный пример лежит в файле [problem.html](https://github.com/Sergisa/WebTrain/blob/JQuery/problem.html)
 
 Если вы будете в цепочке оперировать несуществующим объектом, то вы об этом никогда не узнаете в консоли.
 
 ## Самодельный jQuery
 
-> Данный пример содержится в файле smallSelfMadejQuery.html
+> Данный пример содержится в файле [smallSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/smallSelfMadejQuery.html)  
+> Усложненный вариант находится в файле [extendedSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/extendedSelfMadejQuery.html).  
+> Там добавлена поддержка работы с набором тегов и несколько дополнительных функций jQuery
 
 А что если мы сами попытаемся создать свой jQuery?
 Давайте сделаем свой jQuery, который сможет работать лишь над одним элементом, и у которого есть операции `html()`,
