@@ -53,7 +53,9 @@ $('div').toggleClass('active', 'disabled').css('backgroundColor', 'red');
 
 ## Цепочный вызов
 
-Так же бибилиотеку jQuery отличает от обычно JS еще и тот факт, что функции, оперирующие над набором тегов можно
+> Данный пример содержится в файле [simple.html](https://github.com/Sergisa/WebTrain/blob/JQuery/simple.html)
+
+Так же библиотеку jQuery отличает от обычного JS еще и тот факт, что функции, оперирующие над набором тегов можно
 вызывать по цепочке. То есть когда мы хотим выполнить несколько действий мы должны их выполнять по одному на каждой
 строчке, в то время как при использовании jQuery мы можем их выполнить цепочкой. Например:
 
@@ -74,34 +76,128 @@ element.appendChild(newSpan)//Добавить тэг
 ```javascript
 $('#myElement')
     .css('color', '#5b5f97') //установить css свойство
-    .removeClass('visible')
-    .append(
-        $('<span></span>')
-            .html("SomeSpan")
-            .css({
+    .removeClass('visible') //Удалить класс
+    .append( //Добавить в конец тэга
+        $('<span></span>') //Создание нового тэга
+            .html("SomeSpan") //Установка содержимого тега
+            .css({ // Установка css свойств
                 backgroundColor: "#B8B8D1",
                 padding: "0.5rem",
                 borderRadius: "0.25rem"
             })
-    )//Удалить класс
+    )
 ```
 
 А можно даже было зайти и с другой стороны и начинать действия от создания внутреннего элемента:
 
 ```javascript
-$('<span></span>')
-    .html("SomeSpan")
-    .css({
+$('<span></span>') //Создание тега
+    .html("SomeSpan") //Установка содержимого тэга
+    .css({ //Установка css свойств
         backgroundColor: "#B8B8D1",
         padding: "0.5rem",
         borderRadius: "0.25rem"
     })
-    .appendTo(
-        $('#myElement ').css('color', '#5b5f97').removeClass('visible')
+    .appendTo( //Добавить в конец К ->
+        $('#myElement ').css('color', '#5b5f97').removeClass('visible') //Выборка элемента -> установка css -> удаление класса
     )
 ```
 
 ## Минусы
 
+> Данный пример лежит в файле [problem.html](https://github.com/Sergisa/WebTrain/blob/JQuery/problem.html)
+
 Если вы будете в цепочке оперировать несуществующим объектом, то вы об этом никогда не узнаете в консоли.
 
+## Самодельный jQuery
+
+> Данный пример содержится в файле [smallSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/smallSelfMadejQuery.html)  
+> Усложненный вариант находится в файле [extendedSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/extendedSelfMadejQuery.html).  
+> Там добавлена поддержка работы с набором тегов и несколько дополнительных функций jQuery
+
+А что если мы сами попытаемся создать свой jQuery?
+Давайте сделаем свой jQuery, который сможет работать лишь над одним элементом, и у которого есть операции `html()`,
+`addClass()`, `removeClass()` и `append()`.  
+Для начала образуем свой объект который будет нам возвращать функция `$()`.
+
+```javascript
+function $(stringSelector) {
+    return {
+        mainObject: document.querySelector(stringSelector),
+    }
+}
+```
+
+Отлично, теперь у нас есть объект с единственным пока свойством **mainObject**. Его теперь можно использовать:
+``var myObject = $("#myDiv")`` Теперь рядом с этим объектом давайте создадим функции которые будут производить операции
+над ним. Начнём с функции `html()`. В jQuery функция устроена таким образом, что если в функцию передан аргумент, то эта
+функция должна заменить содержимое HTML блока и вернуть наш объект, который мы только что выстроили, для того чтобы
+можно было продолжить использовать другие функции, имеющиеся в этом объекте. А если аргументов не передано то возвращать
+она должна содержимое нашего HTML компонента.
+
+```javascript
+function $(stringSelector) {
+    return {
+        mainObject: document.querySelector(stringSelector),
+        html: function (string) {
+            if (string === undefined) {
+                return this.mainObject.innerHTML;
+            } else {
+                this.mainObject.innerHTML = string;
+                return this;
+            }
+        }
+    }
+}
+```
+
+Добавим так же функцию `append()` которая просто прибавляет к тэгу содержимое.
+
+```javascript
+function $(stringSelector) {
+    return {
+        mainObject: document.querySelector(stringSelector),
+        html: function (string) {
+            if (string === undefined) {
+                return this.mainObject.innerHTML;
+            } else {
+                this.mainObject.innerHTML = string;
+                return this;
+            }
+        },
+        append: function (string) {
+            this.mainObject.innerHTML += string;
+        }
+    }
+}
+```
+
+Далее приступим к формированию removeClass и addClass функций. Они должны всего лишь производить операцию и опять же
+возвращать ``this`` для того что бы можно было продолжить вызывать функции объекта.
+
+```javascript
+function $(stringSelector) {
+    return {
+        mainObject: document.querySelector(stringSelector),
+        html: function (string) {
+            if (string === undefined) {
+                return this.mainObject.innerHTML;
+            } else {
+                this.mainObject.innerHTML = string;
+                return this;
+            }
+        },
+        append: function (string) {
+            this.mainObject.innerHTML += string;
+        },
+        addClass: function (singleClassName) {
+            this.mainObject.classList.add(singleClassName);
+            return this;
+        },
+        removeClass: function (singleClassName) {
+            this.mainObject.classList.add(singleClassName)
+            return this;
+        }
+    }
+}
+```
