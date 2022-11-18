@@ -97,6 +97,17 @@ include 'db.php';
     ?>
 </p>
 <form action="addStudent.php">
+    <label for="name">Имя</label>
+    <input type="text" name="name" id="name"><br>
+
+    <label for="surname">Фамилия</label>
+    <input type="text" name="surname" id="surname"><br>
+
+    <label for="group">Группа</label>
+    <select name="group" id="group">
+        <option value="1">20ИТ-ПИ(б/о)ПИП-1</option>
+        <option value="2">19ИТ-ПИ(б/о)ПИП-1</option>
+    </select>
     <button type="submit">Добавить студента</button>
 </form>
 </body>
