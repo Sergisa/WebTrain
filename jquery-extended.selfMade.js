@@ -50,6 +50,23 @@ function $(selector) {
         append: function (appendingElement) {
             this.elements.forEach((element) => element.appendChild(appendingElement));
             return this;
+        },
+        click: function (eventHandler) {
+            this.elements.forEach((element) => {
+                if (eventHandler) {
+                    element.addEventListener('click', function (event) {
+                        const callBackResult = eventHandler(event);
+                        if (!callBackResult) {
+                            event.preventDefault();
+                            event.stopPropagation()
+                        }
+                    });
+                } else {
+                    element.click()
+                }
+            });
+
+
         }
     };
 }

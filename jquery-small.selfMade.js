@@ -28,6 +28,19 @@ function $(stringSelector) {
         hide: function () {
             this.mainObject.style.display = "none"
             return this;
+        },
+        click: function (eventHandler) {
+            if (eventHandler) {
+                this.mainObject.addEventListener('click', function (event) {
+                    const callBackResult = eventHandler(event);
+                    if (!callBackResult) {
+                        event.preventDefault();
+                        event.stopPropagation()
+                    }
+                });
+            } else {
+                this.mainObject.click()
+            }
         }
     }
 }

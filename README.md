@@ -111,19 +111,20 @@ $('<span></span>') //Создание тега
 
 ## Самодельный jQuery
 
-> Данный пример содержится в
+> Простой пример содержится в
 > файле [smallSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/smallSelfMadejQuery.html)
+> и [jquery-small.selfMade.js](https://github.com/Sergisa/WebTrain/blob/JQuery/jquery-small.selfMade.js)
+> Там описан простой аналог jquery библиотеки и её использование. Эта библиотека предоставляет набор функций для
+> оперирования лишь над одним элементом.
 
 > Усложненный вариант находится в
-> файле [extendedSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/extendedSelfMadejQuery.html).  
+> файле [extendedSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/extendedSelfMadejQuery.html)
+> и [jquery-extended.selfMade.js](https://github.com/Sergisa/WebTrain/blob/JQuery/jquery-extended.selfMade.js).  
 > Там добавлена поддержка работы с набором тегов и несколько дополнительных функций jQuery
 
-> Самодельная библиотека находится в
-> файле [jquery-extended.selfMade.js](https://github.com/Sergisa/WebTrain/blob/JQuery/jquery.selfMade.js)
-
-А что если мы сами попытаемся создать свой jQuery?
-Давайте сделаем свой jQuery, который сможет работать лишь над одним элементом, и у которого есть операции `html()`,
-`addClass()`, `removeClass()` и `append()`.  
+Давайте попытаемся создать свой jQuery.
+Давайте сделаем свой jQuery, который сможет работать лишь над одним элементом, с набором
+операций: `html()`, `addClass()`, `removeClass()` и `append()`.  
 Для начала образуем свой объект который будет нам возвращать функция `$()`.
 
 ```javascript
@@ -133,6 +134,8 @@ function $(stringSelector) {
     }
 }
 ```
+
+### html(), append(), removeClass(), addClass()
 
 Отлично, теперь у нас есть объект с единственным пока свойством **mainObject**. Его теперь можно использовать:
 ``var myObject = $("#myDiv")`` Теперь рядом с этим объектом давайте создадим функции которые будут производить операции
@@ -212,7 +215,36 @@ function $(stringSelector) {
 }
 ```
 
-### Копаем ещё глубжее (_Опреации над множеством объектов_)
+### click()
+
+В библиотеке так же есть такая функция как click(). Если её вызвать от jQuery объекта, то она вызовет это событие у
+каждого элемента в наборе. Если же в функцию передать аргумент в виде анонимной функции, то это будет функция, которая
+будет вызвана при наступлении этого события с каждым элементом набора.
+
+```javascript
+{
+    click: function click(eventHandler) {
+        this.elements.forEach((element) => {
+            if (eventHandler) {
+                element.addEventListener('click', eventHandler);
+            } else {
+                element.click()
+            }
+        });
+    }
+}
+```
+
+И использовать эту функцию мы теперь можем вот так:
+
+```javascript
+$('.block').click() //Вызов функции
+$('.block').click(function () {//Обработчик события
+    console.log("Clicked");
+}) 
+```
+
+### Копаем ещё глубжее (_Операции над множеством объектов_)
 
 И так у нас есть небольшой функционал управления тэгом. Но наша цель была в создании возможности групповых действий над
 набором элементов одновременно.
@@ -220,7 +252,7 @@ function $(stringSelector) {
 Для начала поменяем значение объекта ``mainObject:document.querySelector(stringSelector)``. Теперь это будет переменная
 elements, а её значение будет следующим:`` elements: document.querySelectorAll(selector),``. Теперь в каждой из
 имеющихся в нашем арсенале функций нам необходимо будет поменять алгоритм действий. Так как сейчас мы в каждой функции
-оперируем со свойством одного элемента, а теперь у нас это целый набор такиж элементов.
+оперируем со свойством одного элемента, а теперь у нас это целый набор таких элементов.
 
 #### function html(text)
 
@@ -233,7 +265,7 @@ elements, а её значение будет следующим:`` elements: do
 
 ```javascript
 {
-    html: function (text) {
+    html: function html(text) {
         if (text === undefined) {
             return this.elements[0].innerHTML;
         } else {
@@ -250,7 +282,7 @@ elements, а её значение будет следующим:`` elements: do
 
 ```javascript
 {
-    addClass: function (className) {
+    addClass: function addClass(className) {
         this.elements.forEach((element) => {
             if (element.classList.contains(className)) {
                 element.classList.add(className)
