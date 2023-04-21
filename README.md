@@ -111,9 +111,15 @@ $('<span></span>') //Создание тега
 
 ## Самодельный jQuery
 
-> Данный пример содержится в файле [smallSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/smallSelfMadejQuery.html)  
-> Усложненный вариант находится в файле [extendedSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/extendedSelfMadejQuery.html).  
+> Данный пример содержится в
+> файле [smallSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/smallSelfMadejQuery.html)
+
+> Усложненный вариант находится в
+> файле [extendedSelfMadejQuery.html](https://github.com/Sergisa/WebTrain/blob/JQuery/extendedSelfMadejQuery.html).  
 > Там добавлена поддержка работы с набором тегов и несколько дополнительных функций jQuery
+
+> Самодельная библиотека находится в
+> файле [jquery-extended.selfMade.js](https://github.com/Sergisa/WebTrain/blob/JQuery/jquery.selfMade.js)
 
 А что если мы сами попытаемся создать свой jQuery?
 Давайте сделаем свой jQuery, который сможет работать лишь над одним элементом, и у которого есть операции `html()`,
@@ -133,7 +139,9 @@ function $(stringSelector) {
 над ним. Начнём с функции `html()`. В jQuery функция устроена таким образом, что если в функцию передан аргумент, то эта
 функция должна заменить содержимое HTML блока и вернуть наш объект, который мы только что выстроили, для того чтобы
 можно было продолжить использовать другие функции, имеющиеся в этом объекте. А если аргументов не передано то возвращать
-она должна содержимое нашего HTML компонента.
+она должна содержимое нашего HTML компонента. То есть каждая функция должна иметь где-либо в конце
+строку ``return this``, что будет означать что функция вернёт ту область, тот контекст в которой сама находится. А
+значит мы сможем снова вызывать другие функции лежащие рядом с ней и так без конца по цепочке.
 
 ```javascript
 function $(stringSelector) {
@@ -167,6 +175,7 @@ function $(stringSelector) {
         },
         append: function (string) {
             this.mainObject.innerHTML += string;
+            return this;
         }
     }
 }
@@ -189,6 +198,7 @@ function $(stringSelector) {
         },
         append: function (string) {
             this.mainObject.innerHTML += string;
+            return this;
         },
         addClass: function (singleClassName) {
             this.mainObject.classList.add(singleClassName);
@@ -201,3 +211,66 @@ function $(stringSelector) {
     }
 }
 ```
+
+### Копаем ещё глубжее (_Опреации над множеством объектов_)
+
+И так у нас есть небольшой функционал управления тэгом. Но наша цель была в создании возможности групповых действий над
+набором элементов одновременно.
+Давайте на примере двух функций (html, addClass) добьёмся этого.
+Для начала поменяем значение объекта ``mainObject:document.querySelector(stringSelector)``. Теперь это будет переменная
+elements, а её значение будет следующим:`` elements: document.querySelectorAll(selector),``. Теперь в каждой из
+имеющихся в нашем арсенале функций нам необходимо будет поменять алгоритм действий. Так как сейчас мы в каждой функции
+оперируем со свойством одного элемента, а теперь у нас это целый набор такиж элементов.
+
+#### function html(text)
+
+В принципе для нашей цели нужно изменить функцию совсем немного. А именно: просто вставить туда цикл, который будет
+пробегаться по набору объектов и выполнять то действие, которое выполнялось в этой функции ранее.
+Нам так же необходимо подумать над логикой операции, которую выполняет наша функция:  
+Операция "Установи html содержимое", выполняемая над набором элементов крайне ясна - она означает "выполни с каждым", а
+что значит "верни html содержимое" над несколькими элементами разом? Давайте решим по-умолчанию, что в таком случае мы
+будем вести речь про первый объект в наборе.
+
+```javascript
+{
+    html: function (text) {
+        if (text === undefined) {
+            return this.elements[0].innerHTML;
+        } else {
+            this.elements.forEach(element => element.innerHTML = text);
+            return this;
+        }
+    }
+}
+```
+
+#### function addClass(className)
+
+В данной функции всё намного проще: мы просто на каждый элемент набора добавляем класс, проверив что такого там еще нет.
+
+```javascript
+{
+    addClass: function (className) {
+        this.elements.forEach((element) => {
+            if (element.classList.contains(className)) {
+                element.classList.add(className)
+            }
+        });
+        return this;
+    }
+}
+```
+
+## Задача
+
+Теперь можете подумать над тем как в эту конструкцию внедрить функцию ``show()``, которая будет отображать элемент
+и ``hide()``, которая будет его скрывать. Но для этого необходимо будет разрешить некоторые дилеммы:
+
+- можно управлять двумя свойствами объекта HTML _**visibility**_ и _**display**_ какое из них мы
+  будем трогать что бы отображать и скрывать элемент?
+- Элемент скрыт это ``display:none``, а отобразить элемент это ``display: block`` или ``display:flex``, а
+  может ``display:grid``?
+- Как узнать в каком состоянии объект? В каком состоянии у него свойство _**display**_ и свойство _**visibility**_?
+  HTMLObject.style.display покажет нам лишь тот факт прописано ли у элемента в тэге свойство
+  style: ``<div style="display:none"></div>``. Если же у тэга какое-либо стилевое свойство прописано в CSS
+  через ``.style.`` мы про значение css свойства не узнаем.

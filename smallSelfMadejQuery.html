@@ -29,34 +29,6 @@
 </body>
 <!--<script src="jquery.min.js"></script>-->
 <script>
-    function $(stringSelector) {
-        return {
-            mainObject: document.querySelector(stringSelector),
-            html: function (string) {
-                if (string === undefined) {
-                    return this.mainObject.innerHTML;
-                } else {
-                    this.mainObject.innerHTML = string;
-                    return this;
-                }
-            },
-            append: function (string) {
-                this.mainObject.innerHTML += string;
-                return this;
-            },
-            addClass: function (singleClassName) {
-                this.mainObject.classList.add(singleClassName);
-                return this;
-            },
-            removeClass: function (singleClassName) {
-                this.mainObject.classList.remove(singleClassName)
-                return this;
-            }
-        }
-    }
-</script>
-
-<script>
     console.log(
         $('#demoBlock').removeClass('example1').addClass('example2').append(' Получилось').html()
     );
