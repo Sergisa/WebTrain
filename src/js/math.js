@@ -9,5 +9,6 @@ function divide(a, b) {
 function multiply(a, b) {
     return a * b;
 }
-
-module.exports = {sum, divide, multiply}
+if (typeof exports === 'object') {
+    module.exports = {sum, divide, multiply}
+}
