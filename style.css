@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wdth,wght@0,170,100..900;1,170,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
+
+body {
+    background-color: #f9f9f9;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16pt;
+    --primary-color: #006CB7;
+    --secondary-color: #FF5974;
+    --main-round: 5px;
+    --bg-color: #f9f9f9;
+}
+
+.menu-toggle-button {
+    --shift: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    position: relative;
+    top: var(--shift);
+    left: var(--shift);
+    padding: .3rem .8rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 600;
+}
+
+.menu-toggle-button:hover {
+    background-color: color-mix(in hsl longer hue, var(--bg-color) 95%, var(--primary-color));
+}
+
+.menu-wrapper {
+    --transition-duration: .2s;
+    --delay: 0.2s;
+    display: grid;
+    grid-template-rows: 0fr;
+    grid-template-columns: 50%;
+    transition: grid-template-rows var(--transition-duration) ease-in, grid-template-columns var(--transition-duration) ease-in calc(var(--transition-duration) + var(--delay) );
+}
+
+.menu-wrapper.show {
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    transition: grid-template-columns var(--transition-duration) ease-in, grid-template-rows var(--transition-duration) ease-in calc(var(--transition-duration) + var(--delay));
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: var(--main-round);
+    border: 1px solid var(--primary-color);
+    overflow: hidden;
+}
+
+.menu-item {
+    padding: 3px 20px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.menu-item:first-child {
+    padding-top: 16px;
+    border-top-left-radius: var(--main-round);
+    border-top-right-radius: var(--main-round);
+}
+
+.menu-item:last-child {
+    border-bottom-left-radius: var(--main-round);
+    border-bottom-right-radius: var(--main-round);
+}
+
+.menu-item:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 10%, white);
+    color: var(--primary-color);
+}
+
