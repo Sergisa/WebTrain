@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playpen+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playpen+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
+
+:root {
+    --color-royal: #334EAC;
+    --color-moon: #F7F2EB;
+    --color-china: #7096D1;
+    --color-asian-pear: #F2F0DE;
+    --color-midnight: #081F5C;
+    --color-dawn: #D0E3FF;
+    --color-jicama: #FFF9F0;
+    --color-porcelain: #EDF1F6;
+    --color-sky: #BAD6EB;
+
+}
+
+body {
+    height: 100vh;
+    padding: 30px;
+    margin: 0;
+    background-color: var(--color-asian-pear);
+    /*background: linear-gradient(135deg, #c973ff, #AEBAF8);*/
+    box-sizing: border-box;
+    font-weight: 100;
+    font-family: "Cormorant Garamond", serif;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+h1 {
+    font-size: calc(1.6rem + 1vw);
+    color: var(--color-royal);
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+}
+
+.container {
+    width: 100%;
+    height: 130px;
+}
+
+.block {
+    height: 100%;
+    width: 180px;
+    border-radius: 8px;
+    background-color: var(--color-dawn);
+    float: left;
+}
+
+.block.centering {
+    display: table;
+}
+
+.centered {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: var(--color-royal);
+    font-weight: bolder;
+    font-size: 26px;
+}
