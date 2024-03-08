@@ -54,24 +54,24 @@ body {
     overflow: hidden;
 }
 
-.menu-item {
+.menu-list__item {
     padding: 3px 20px;
     cursor: pointer;
     font-weight: 400;
 }
 
-.menu-item:first-child {
+.menu-list__item:first-child {
     padding-top: 16px;
     border-top-left-radius: var(--main-round);
     border-top-right-radius: var(--main-round);
 }
 
-.menu-item:last-child {
+.menu-list__item:last-child {
     border-bottom-left-radius: var(--main-round);
     border-bottom-right-radius: var(--main-round);
 }
 
-.menu-item:hover {
+.menu-list__item:hover {
     background-color: color-mix(in srgb, var(--primary-color) 10%, white);
     color: var(--primary-color);
 }
