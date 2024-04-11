@@ -1,0 +1,19 @@
+@media (min-width: 576px) {
+    .block { background-color: var(--red)}
+}
+
+@media (min-width: 768px) {
+    .block { background-color: var(--orange) }
+}
+
+@media (min-width: 992px) {
+    .block { background-color: var(--yellow); }
+}
+
+@media (min-width: 1200px) {
+    .block { background-color: var(--green); }
+}
+
+@media (min-width: 1400px) {
+    .block { background-color: var(--blue); }
+}

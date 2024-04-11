@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        :root {
+            --red: red;
+            --orange: #efaa17;
+            --yellow: #f2f526;
+            --green: #47c254;
+            --blue: #0084f8;
+            --light-blue: #58C2F1;
+            --violet: #ba00f8;
+            --xs: 0px;
+            --sm: 576px;
+            --md: 768px;
+            --lg: 992px;
+            --xl: 1200px;
+            --xxl: 1400px;
+        }
+
+        body {
+            background-color: #F0F5F9;
+        }
+
+        .block {
+            width: 50px;
+            height: 50px;
+            border-radius: 7px;
+            background-color: #577399;
+        }
+
+        .block p {
+            display: none;
+        }
+
+        @media (max-width: 575.98px) {
+            .visible-xs {display: block}
+        }
+
+        @media (max-width: 767.98px) {
+            .visible-sm {display: block}
+        }
+
+        @media (max-width: 991.98px) {
+            .visible-md {display: block}
+        }
+
+        @media (max-width: 1199.98px) {
+            .visible-lg {display: block}
+        }
+
+        @media (max-width: 1399.98px) {
+            .visible-xl {display: block}
+        }
+
+
+
+        .visible-xxl {}
+    </style>
+    <!--    <link rel="stylesheet" href="style-min-width.css">-->
+    <link rel="stylesheet" href="style-max-width.css">
+</head>
+<body>
+    <div id="block" class="block">
+        <p class="visible-xs">XS</p>
+        <p class="visible-sm">SM</p>
+        <p class="visible-md">MD</p>
+        <p class="visible-lg">LG</p>
+        <p class="visible-xl">XL</p>
+        <p class="visible-xxl">XXL</p>
+    </div>
+</body>
+</html>
