@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root"></div>
+<div id="navigation"></div>
+<div id="todos-example"></div>
+</body>
+<script src="https://unpkg.com/react/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type="module" src="dist/bundle.js"></script>
+<script type="text/babel" >
+    import {TodoApp} from './dist/bundle';
+    ReactDOM.render(
+        <TodoApp />,
+        document.getElementById('todos-example')
+    );
+</script>
+</html>

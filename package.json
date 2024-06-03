@@ -1,0 +1,23 @@
+{
+  "name": "react-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build:watch": "babel --presets @babel/preset-react src --out-dir dist --watch",
+    "build:index": "babel --presets @babel/preset-react src --out-file dist/bundle.js --watch",
+    "test": "babel --help"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.24.6",
+    "@babel/core": "^7.24.6",
+    "@babel/preset-react": "^7.24.6"
+  },
+  "dependencies": {
+    "babel-plugin-react-compiler": "0.0.0-experimental-938cd9a-20240601",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
