@@ -1,0 +1,20 @@
+@media (min-width: 576px) {
+   .block{background-color: blue;}
+}
+
+@media (min-width: 768px) {
+    .block{background-color: green;}
+}
+
+@media (min-width: 992px) {
+    .block{background-color: aqua;}
+}
+
+@media (min-width: 1200px) {
+    .block{background-color: yellow;}
+}
+
+@media (min-width: 1400px) {
+    .block{background-color: blueviolet;}
+}
+

@@ -1,0 +1,11 @@
+@media (max-width: 1400px) {.block { background-color: blueviolet;}}
+@media (max-width: 1200px) {.block { background-color: yellow; }}
+@media (max-width: 992px) {.block { background-color: aqua; }}
+@media (max-width: 768px) {.block {background-color: green;}}
+@media (max-width: 576px) {.block { background-color: blue; }}
+
+
+
+
+
+
