@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <style>
+        body {
+            font-size: 26px !important;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .toggle {
+            display: none;
+        }
+
+        .toggle_button {
+            height: 30px;
+            width: 60px;
+            border: 2px solid var(--bs-indigo);
+            text-overflow: clip;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .toggle:not(:checked) + .toggle_button:after {
+            top: 1px;
+            left: 2px;
+        }
+
+        .toggle:checked + .toggle_button:after {
+            top: 1px;
+            right: 2px;
+        }
+
+        .toggle_button:after {
+            --diameter: 25px;
+            content: '';
+            display: block;
+            width: var(--diameter);
+            height: var(--diameter);
+            background-color: var(--bs-teal);
+            border-radius: calc(var(--diameter) / 2);
+            position: absolute;
+            transition: all 1s 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="container">
+    <h1>Заголовок</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore doloremque esse eveniet exercitationem in magni
+        maiores possimus quibusdam quis quod?</p>
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <input type="checkbox" name="theme_toggle" id="theme_toggle" class="toggle">
+                <label for="theme_toggle" class="toggle_button"></label>
+            </div>
+            <div>
+                <input type="checkbox" name="theme_toggle" id="theme_toggle2" class="toggle">
+                <label for="theme_toggle2" class="toggle_button"></label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
