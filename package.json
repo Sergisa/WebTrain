@@ -1,0 +1,22 @@
+{
+  "name": "webtrain",
+  "description": "![alt text](https://github.com/Sergisa/WebTrain/blob/master/webTrain.png?raw=true)\r # Примеры по веб программированию\r ## Вступление\r Темы на данном ресурсе разделены по веткам. Основная **master** ветка не содержит никакого кода. История изменений в этой ветке это лишь изменения данного README файла.\r Отдельный пример является отдельной веткой, а изменения на ней разными вариациями примера.\r Набор веток:\r * form\r * function\r * icons\r * links\r * modal\r * qrcode\r * table\r * toast",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "check-js": "eslint src/js/array.js",
+    "test-js": "jest",
+    "check-css": "stylelint src/css/popup.css --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "eslint": "^9.12.0",
+    "globals": "^15.11.0",
+    "jest": "^29.7.0",
+    "postcss-lit": "^1.1.1",
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}
