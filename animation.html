@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Анимация открытия списка</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dropdown.css">
+</head>
+<body>
+    <div class="dropdown">
+        <div class="dropdown__thumbnail">Выберите элемент</div>
+        <div class="dropdown__list active">
+            <ul class="">
+                <li class="element">Первый элемент</li>
+                <li class="element">Второй элемент</li>
+                <li class="element">Третий элемент</li>
+                <li class="element">Четвёртый элемент</li>
+                <li class="element">Лилу с мультипаспортом</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="dropdown">
+        <div class="dropdown__thumbnail">Выберите элемент</div>
+        <div class="dropdown__list">
+            <ul class="">
+                <li class="element">Первый элемент</li>
+                <li class="element">Второй элемент</li>
+                <li class="element">Третий элемент</li>
+                <li class="element">Четвёртый элемент</li>
+                <li class="element">Лилу с мультипаспортом</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    document.querySelectorAll('.dropdown__thumbnail').forEach(function (e, i) {
+        e.onclick = function (event) {
+            event.target.nextElementSibling.classList.toggle("active")
+        }
+    })
+</script>
+</html>
