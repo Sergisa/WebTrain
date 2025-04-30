@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Заголовок</h1>
+    <div class="user" data-user="Ivan">Пользователь: Ivan</div>
+    <div class="user" data-user="Andrey">Пользователь: Andrey</div>
+    <div class="user" data-user="Sergey">Пользователь: Sergey</div>
+    <div class="user" data-user="Oleg">Пользователь: Oleg</div>
+    <button onclick="addUserCard()">Добавь ещё, мне мало</button>
+</body>
+<script>
+    let users = [
+        {
+            id: 'd3775d95-1798-4874-96a2-4743fb9dc476',
+            login: 'Максим',
+            password: '123'
+        },
+        {
+            id: 'd033ca5f-da7e-4d3d-8ae9-3f1155f505cd',
+            login: 'Дмитрий',
+            password: '789'
+        },
+        {
+            id: '700d0b72-298f-4cc7-84e2-b6839f53a324',
+            login: 'Юрий',
+            password: 'pass'
+        },
+        {
+            id: '214ef35c-b262-44f9-8b86-d5d71f56e38e',
+            login: 'Oleg',
+            password: 'qwerty'
+        },
+    ]
+    let usersIterator = users[Symbol.iterator]();
+
+    function addUserCard() {
+        let user = usersIterator.next()
+        if (!user.done) {
+            let newUserTag = document.createElement('div')
+            newUserTag.classList.add('user')
+            newUserTag.dataset.user = user.value.login
+            newUserTag.dataset.id = user.value.id
+            newUserTag.innerHTML = `Пользователь: ${user.value.login}`
+            document.body.appendChild(newUserTag)
+        }
+    }
+
+    $(document.body).on('click', '.user', function (event) {
+        let user = users.find((element) => element.id === event.target.dataset.id)
+        console.log(user.password);
+    })
+</script>
+</html>

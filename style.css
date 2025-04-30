@@ -1,0 +1,81 @@
+body {
+    font-family: "Jost", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    background-attachment: fixed;
+    background-color: #f9f4ea;
+    color: #605f4b;
+    font-size: 20px;
+    margin: 0;
+    padding: 0 4rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display";
+    color: #c47457;
+    margin: 1rem 0;
+    font-weight: 500;
+}
+p{
+    margin: 1rem 0;
+}
+.nav-menu {
+    list-style: none;
+    display: flex;
+    border-radius: 10px;
+    background-color: #f9f4ea;
+    backdrop-filter: opacity(24.8%);
+    border: 1px solid #c47457;
+    padding: .5rem;
+    margin: 0 0 1rem;
+}
+/*.nav-menu__item:first-child {
+    margin: 0;
+}*/
+.nav-menu__item {
+    margin-left: 1rem;
+    position: relative;
+}
+
+.nav-menu__item.right-aligned {
+    margin-left: auto;
+}
+
+.nav-menu__item.active::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    top: 5px;
+    right: 5px;
+}
+
+.nav-menu__item a {
+    padding: .5rem .4rem;
+    text-decoration: none;
+    display: block;
+    border-radius: 7px;
+}
+
+.nav-menu__item a:hover {
+    background-color: #e5e5e5;
+}
+
+button:hover {
+    background-color: #d5d5d5;
+}
+
+button {
+    background-color: #e5e5e5;
+    border: none;
+    border-radius: 7px;
+    padding: 0.5rem 0.5rem;
+    font-family: 'Jost';
+    cursor: pointer;
+}
+
