@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+*:focus {
+    /*outline: 3px solid #FBAB7E;*/
+    outline: 3px solid #53cc7d;
+    border-radius: 7px;
+    outline-offset: 3px;
+}
+
+.input-wrapper {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+}
+
+.input-wrapper input {
+    border-radius: 7px;
+    border: 1px solid peachpuff;
+    padding: .4rem 1.2rem;
+    font-size: 1.2rem;
+    color: #605f4b;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.eye:hover {
+    background-color: transparent;
+}
+.eye {
+    position: absolute;
+    right: 4px;
+    height: 80%;
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: brown;
+    background-color: transparent;
+    padding: 0;
+}
+
+.form-line {
+    margin-top: 1rem;
+}
