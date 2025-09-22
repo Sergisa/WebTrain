@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:x-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+</head>
+<body x-data="todos()">
+    <h1 class="title">Планы на сегодня:</h1>
+    <button x-on:click="modal_add_visibility = !modal_add_visibility">Добавить</button>
+    <div class="modal-wrapper" x-show="modal_add_visibility" @click.self="modal_add_visibility = !modal_add_visibility">
+        <div class="modal">
+            <h4 class="modal__title">Добавить новую задачу:</h4>
+            <input type="text" x-model="inputValue"/>
+            <button @click="addTodo()">Добавить</button>
+        </div>
+    </div>
+    <ul class="duty-list">
+        <template x-for="todo in todos" :key="todo.id">
+            <li x-text="todo.title"
+                @click="toggleTodo(todo.id)"
+                class="duty-list__element"
+                :class="{'duty-list__element_completed': todo.completed}"></li>
+        </template>
+    </ul>
+</body>
+<script>
+    function todos() {
+        return {
+            modal_add_visibility: false,
+            inputValue: '',
+            todos: [
+                {id: 1, title: 'купить хлеб', completed: false},
+                {id: 2, title: 'продать айфон', completed: false},
+                {id: 3, title: 'закончить этот курс', completed: false},
+                {id: 4, title: 'перестать быть банальным', completed: false}
+            ],
+            addTodo: function () {
+                if (!this.inputValue) {
+                    return;
+                }
+
+                this.todos.push({
+                    id: Date.now(),
+                    title: this.inputValue,
+                    completed: false,
+                });
+                this.inputValue = '';
+            },
+            toggleTodo: function (id) {
+                var todo = this.todos.find((todo) => todo.id === id);
+                todo.completed = !todo.completed;
+            },
+        }
+    }
+</script>
+</html>
