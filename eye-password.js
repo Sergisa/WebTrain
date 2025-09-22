@@ -1,4 +1,3 @@
-import BrowserDetector from './detector.js';
 
 const detector = (new BrowserDetector(window.navigator.userAgent)).parseUserAgent();
 console.log(detector)
