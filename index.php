@@ -1,5 +1,8 @@
 <?php
 include 'db.php';
+function getPDO(){
+    return DBConnection::getInstance();
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -96,7 +99,7 @@ include 'db.php';
     }
     ?>
 </p>
-<form action="addStudent.php">
+<form action="addStudent.php" >
     <button type="submit">Добавить студента</button>
 </form>
 </body>
