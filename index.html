@@ -2,14 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <link rel="icon" type="image/svg+xml" href="src/assets/CalendarIcon.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>timetable</title>
+    <title>Расписание</title>
+    <link rel="stylesheet" href="./src/index.css"/>
+    <script type="module" src="/src/components/headline.js"></script>
+    <script type="module" src="/src/components/day-wrapper.js"></script>
+    <script type="module" src="/src/components/calendar.js"></script>
 </head>
 <body>
-<a href="/about">ABOUT</a><br>
-<a href="/calendar">Calendar</a>
-<div id="root"></div>
-<script type="module" src="/src/index.jsx"></script>
+<div class="headline">
+<!--    <headline-element></headline-element>-->
+    <img src="src/assets/CalendarIcon.svg" class="logo lit" alt="Lit logo" />
+    <img src="/vite.svg" class="logo" alt="Lit logo" />
+    <img src="src/assets/lit.svg" class="logo lit" alt="Lit logo" />
+    <div class="title">
+        <h1>Расписание</h1>
+        <h2 class="secondary">Очень важное расписание</h2>
+    </div>
+</div>
+<div class="controls">
+    <button class="btn" id="shift-left-button">shift-left</button>
+    <button class="btn" id="shift-right-button">shift-right</button>
+</div>
+<calendar-element class="calendar" id="calendar"></calendar-element>
 </body>
+<script type="module">
+    let calendar = document.getElementById('calendar');
+    calendar.setDays(31);
+    document.getElementById('shift-right-button').addEventListener('click', shiftRight);
+    document.getElementById('shift-left-button').addEventListener('click', shiftLeft);
+
+    function shiftLeft() {
+        calendar.shift(-1)
+    }
+
+    function shiftRight() {
+        calendar.shift(1)
+    }
+
+    /*for (let i = 0; i < 31; i++) {
+        document.getElementsByClassName('calendar')[Symbol.iterator]().forEach((element) => {
+            let dayFragment = document.createElement('day-wrapper')
+            dayFragment.innerHTML='Day Fragment'
+            dayFragment.dataset.weekIndex = `${i + 1}`;
+            element.appendChild(dayFragment);
+        })
+    }*/
+</script>
 </html>
