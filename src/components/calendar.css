@@ -12,5 +12,6 @@
     display: block;
     padding: .4rem .2rem;
     border-radius: 5px;
+    /*background-color:#171717e3;*/
     background-color: rgba(var(--main-color-rgb), 0.03);
 }
