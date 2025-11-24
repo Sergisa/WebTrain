@@ -4,12 +4,14 @@ import {render} from 'solid-js/web'
 import './index.css'
 import App from './App.jsx'
 import {Route, Router} from "@solidjs/router";
-//import Home from './routes/index.jsx'
-import Calendar from './components/calendar.jsx'
 import Timetable from "./routes/timetable.jsx";
 
 const root = document.getElementById('root')
-
+if (matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.dataset.theme = 'dark';
+} else {
+    document.documentElement.dataset.theme = 'light';
+}
 render(() => (
     <Router>
         <Route path="/" component={App}/>

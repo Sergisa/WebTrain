@@ -1,6 +1,6 @@
 import CalendarDay from "./calendar-day.jsx";
 import {createSignal, For} from "solid-js";
-import './calendar.css'
+import styles from './calendar.module.css'
 
 function Calendar(props) {
     let itemsArray = [];
@@ -10,7 +10,7 @@ function Calendar(props) {
     const [items, setItems] = createSignal(itemsArray)
 
     return (
-        <div class="calendar">
+        <div class={styles.calendar}>
             <For each={items()}>
                 {(item, index) => (
                     <CalendarDay>{item}</CalendarDay>

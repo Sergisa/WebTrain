@@ -3,6 +3,7 @@
     grid-template-columns: repeat(7, 150px);
     grid-template-rows: repeat(5, 150px);
     gap: 5px 10px;
+    justify-content: center;
 }
 
 .calendar__day {

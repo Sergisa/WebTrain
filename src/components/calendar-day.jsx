@@ -1,9 +1,9 @@
-
+import styles from './calendar.module.css'
 function CalendarDay(props) {
 
     return (
         <>
-            <div class="calendar__day">
+            <div class={styles.calendar__day}>
                 {props.children}
             </div>
         </>
