@@ -1,0 +1,16 @@
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 150px);
+    grid-template-rows: repeat(5, 150px);
+    gap: 5px 10px;
+}
+
+.calendar__day {
+    --main-color-rgb: var(--secondary-color-rgb);
+    --main-color-hex: var(--secondary-color-hex);
+    border: 1px solid var(--main-color-hex);
+    display: block;
+    padding: .4rem .2rem;
+    border-radius: 5px;
+    background-color: rgba(var(--main-color-rgb), 0.03);
+}
