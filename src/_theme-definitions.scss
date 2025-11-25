@@ -1,0 +1,35 @@
+@import 'theme-variables';
+
+:root {
+  @include light-theme-vars;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: color-mix(in srgb, var(--background-color) 100%, black 10%);
+  color: black;
+}
+
+@include light-root {
+  @include light-theme-vars;
+
+}
+
+
+
+@include dark-root {
+  @include dark-theme-vars;
+  /*button {
+    background-color: color-mix(in srgb, var(--background-color) 10%, black);
+    color: #FBFBFE;
+  }*/
+}

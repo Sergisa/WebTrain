@@ -1,0 +1,43 @@
+@mixin dark-theme-vars {
+  --primary-color-hex: #BADE4f;
+  --primary-color-rgb: 186, 222, 79;
+  --secondary-color-hex: #6E8EEC;
+  --secondary-color-rgb: 110, 142, 236;
+  --background-color: #282B26;
+  --text-color: var(--primary-color-hex);
+
+
+}
+
+@mixin light-theme-vars {
+  --primary-color-hex: #ff0040;
+  --primary-color-rgb: 255, 0, 64;
+  --secondary-color-hex: #1355B2;
+  --secondary-color-rgb: 19, 85, 178;
+  --background-color: #f8f6f5;
+  --text-color: var(--primary-color-hex);
+}
+
+@mixin dark-root {
+  :root[data-theme="dark"] {
+    @content
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      @content
+    }
+  }
+
+}
+
+@mixin light-root {
+  :root[data-theme="light"] {
+    @content
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      @content
+    }
+  }
+
+}

@@ -1,5 +1,5 @@
-import Calendar from "../components/calendar.jsx";
-import CalendarDay from "../components/calendar-day.jsx";
+import Calendar from "../components/calendar/calendar.jsx";
+import CalendarDay from "../components/calendar/calendar-day.jsx";
 import {createSignal, For} from "solid-js";
 
 function Timetable() {
