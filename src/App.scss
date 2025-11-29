@@ -26,6 +26,10 @@ a:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.logo.calendar:hover {
+  filter: drop-shadow(0 0 2em rgb(from var(--primary-color-hex) r g b / 0.4));
+}
+
 .card {
   padding: 2em;
 }

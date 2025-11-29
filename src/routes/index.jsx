@@ -1,6 +1,7 @@
 import { createSignal } from 'solid-js'
 import solidLogo from '../assets/solid.svg'
 import viteLogo from '/vite.svg'
+import calendarLogo from '../assets/calendar.svg'
 import '../index.css'
 
 function IndexPage() {
@@ -14,6 +15,9 @@ function IndexPage() {
                 </a>
                 <a href="https://solidjs.com" target="_blank">
                     <img src={solidLogo} class="logo solid" alt="Solid logo" />
+                </a>
+                <a href="https://solidjs.com" target="_blank">
+                    <img src={calendarLogo} class="logo calendar" alt="Solid logo" />
                 </a>
             </div>
             <h1>Vite + Solid</h1>
