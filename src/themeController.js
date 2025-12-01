@@ -1,14 +1,17 @@
+function getInvertedPreferredTheme() {
+    return (getPreferredTheme() === "dark") ? "light" : "dark"
+}
+
 function getPreferredTheme() {
+    const matcher = matchMedia('(prefers-color-scheme: dark)');
     if (localStorage.getItem('theme')) {
         return localStorage.getItem('theme')
     }
-    return matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+    return matcher.matches ? "dark" : "light";
 }
 
-function enableThemeListener() {
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
-        document.documentElement.dataset.theme = getPreferredTheme();
-    });
+function updateThemeTag() {
+    document.documentElement.dataset.theme = getPreferredTheme();
 }
 
-export {getPreferredTheme, enableThemeListener}
+export {getPreferredTheme, updateThemeTag, getInvertedPreferredTheme}

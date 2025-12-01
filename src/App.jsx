@@ -4,13 +4,21 @@ import {render} from 'solid-js/web'
 import './App.scss'
 import {Route, Router} from "@solidjs/router";
 import Timetable from "./routes/timetable.jsx";
-import {enableThemeListener, getPreferredTheme} from "./themeController.js";
+import {getInvertedPreferredTheme, getPreferredTheme, updateThemeTag} from "./themeController.js";
 import IndexPage from "./routes/index.jsx";
 
 const root = document.getElementById('root')
-document.documentElement.dataset.theme = getPreferredTheme();
-enableThemeListener();
 
+updateThemeTag()
+document.getElementById('theme-toggle').addEventListener('click', function () {
+    localStorage.setItem('theme', getInvertedPreferredTheme());
+    updateThemeTag();
+})
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (!localStorage.getItem('theme')) {
+        updateThemeTag();
+    }
+});
 
 render(() => (
     <Router>

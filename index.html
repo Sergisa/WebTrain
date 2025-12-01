@@ -13,20 +13,4 @@
 <div id="root"></div>
 <script type="module" src="/src/App.jsx"></script>
 </body>
-<script>
-    function togglePreferredTheme() {
-        if (document.documentElement.dataset.theme === 'light'){
-            document.documentElement.dataset.theme = 'dark';
-            return
-        }
-        document.documentElement.dataset.theme = 'light';
-    }
-
-    document.getElementById('theme-toggle').addEventListener('click', function () {
-        togglePreferredTheme();
-    })
-    window.matchMedia("(prefer color-scheme: dark)").addEventListener("change", function (event) {
-        document.documentElement.dataset.theme = event.matches ? "dark" : "light";
-    })
-</script>
 </html>
