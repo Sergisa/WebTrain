@@ -10,7 +10,7 @@ body {
     margin: 0 auto;
 }
 
-.input_field {
+.field-wrapper__input {
     font-family: 'Montserrat', sans-serif;
     border: none;
     display: block;
@@ -25,48 +25,59 @@ body {
     margin-bottom: 1.3rem;
 }
 
-form label {
+.form label {
     font-family: 'Montserrat', sans-serif;
     color: #3f51b5;
     font-weight: 500;
 }
 
-form {
+.form {
     border: 1px solid #ababab;
     border-radius: 7px;
-    padding: 1.4rem;
+    padding: 1.4rem 1.4rem .4rem;
     display: table;
     background: #f3f0f1;
     margin: 0 auto;
 }
 
 .form__button {
-    padding: 0px 1em;
-    border: none;
-    outline: none;
-    position: relative;
-    background: #f3f0f1;
-    border-radius: 10px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
     display: block;
     margin: 1em auto auto;
     line-height: 1.7em;
     font-family: "Montserrat", sans-serif;
-    font-size: 22px;
-    font-weight: 400;
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
-    color: #3f51b5;
+
 }
 
-.form__button:hover {
+.form__button--main-button:hover {
     color: #8f8cfe;
     box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-.form__button:active {
+.form__button--main-button:active {
     opacity: 1;
     box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5), inset 8px 8px 16px rgba(0, 0, 0, 0.1);
     color: #79e3b6;
+}
+
+.form__button--main-button {
+    font-size: 22px;
+    font-weight: 400;
+    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8), 6px 6px 10px rgba(0, 0, 0, 0.2);
+    color: #3f51b5;
+    padding: 0 1em;
+    border: none;
+    outline: none;
+    background: #f3f0f1;
+    border-radius: 10px;
+    transition: all 0.1s ease-in-out;
+}
+
+.form__button--registration-link {
+    margin-top: 1.4rem;
+    font-size: 14px;
+    color: #08bc62;
+    text-decoration: none;
+    text-align: right;
 }

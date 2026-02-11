@@ -3,21 +3,20 @@
         <meta charset="utf-8">
         <title>Пример формы</title>
         <link rel="stylesheet" href="style.css">
-        <style>
-        </style>
     </head>
     <body>
         <div class="main_wrapper">
-            <form action="">
-                <div class="form-field" id="login">
+            <form action="" class="form">
+                <div class="form__field-wrapper" id="login">
                     <label for="login-input">Ваш логин</label>
-                    <input type="text" name="" id="login-input" class="input_field">
+                    <input type="text" name="" id="login-input" class="field-wrapper__input">
                 </div>
-                <div class="form-field" id="password">
+                <div class="form__field-wrapper" id="password">
                     <label for="password-input">Ваш пароль</label>
-                    <input type="password" name="" id="password-input" class="input_field">
+                    <input type="password" name="" id="password-input" class="field-wrapper__input">
                 </div>
-                <input class="form__button" id="submitting_stopped_button" type="submit" value="Войти"/>
+                <input class="form__button form__button--main-button" id="submitting_stopped_button" type="submit" value="Войти"/>
+                <a class="form__button form__button--registration-link" href="registration.html">Зарегистрироваться</a>
             </form>
         </div>
         <script src="index.js"></script>
