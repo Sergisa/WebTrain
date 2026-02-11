@@ -21,17 +21,14 @@ body {
     padding: 0.2em 1em;
     font-size: 1rem;
     font-weight: 400;
+    margin-top: 0.3rem;
+    margin-bottom: 1.3rem;
 }
 
 form label {
     font-family: 'Montserrat', sans-serif;
-    color: #5d5d5d;
-}
-
-form input {
-    margin-top: 0.3rem;
-    margin-bottom: 1.3rem;
-    box-shadow: 2px 2px 2px #cccccc8e;
+    color: #3f51b5;
+    font-weight: 500;
 }
 
 form {
