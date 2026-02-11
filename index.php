@@ -99,8 +99,15 @@ function getPDO(){
     }
     ?>
 </p>
-<form action="addStudent.php" >
+<form method="GET" action="addStudent.php" >
+    <input name="userName" id="name">
     <button type="submit">Добавить студента</button>
 </form>
 </body>
+<script>
+    $.ajax('file.php',{
+        method: "GET",
+        url: "test.js",
+    })
+</script>
 </html>

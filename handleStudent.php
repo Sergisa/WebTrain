@@ -20,7 +20,7 @@
             processDelete($data);
             break;
     }
-    //echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+    echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
     function processGet($requestBody): false|string
     {
         return json_encode(DBConnection::getInstance()->query('SELECT * FROM users')->fetchAll(PDO::FETCH_ASSOC));
